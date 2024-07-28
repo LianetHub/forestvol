@@ -1,0 +1,26 @@
+<div class="col-xl-4 col-sm-6">
+    <a href="" class="projects__card d-flex flex-column rounded-sm">
+        <span class="projects__card-labels d-flex align-items-center flex-wrap">
+            <span class="projects__card-label">
+                @@label
+            </span>
+            @@if(hasGreenLabel===true) {
+            <span class="projects__card-label green">
+                @@greenLabel
+            </span>
+            }
+        </span>
+        <span class="projects__card-image">
+            <img src="@img/projects/@@url.jpg" class="cover-image" alt="Фото проекта">
+        </span>
+        <span class="projects__card-body">
+            <span class="projects__card-desc">@@desc</span>
+            <span class="projects__card-footer d-flex align-items-center justify-content-between">
+                <span class="projects__card-price">
+                    от&nbsp;<strong>@@price</strong>&nbsp;млн ₽
+                </span>
+                <span class="projects__card-more icon-arrow-short"></span>
+            </span>
+        </span>
+    </a>
+</div>

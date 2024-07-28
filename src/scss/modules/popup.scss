@@ -1,0 +1,46 @@
+.fancybox-bg {
+	background: rgba($color: #1d1d1d, $alpha: 0.4);
+}
+
+.fancybox__content {
+	color: inherit;
+	background: none;
+	padding: 0;
+}
+
+.fancybox__content :focus:not(.carousel__button.is-close) {
+	outline: none;
+}
+
+.popup {
+	display: none;
+	width: 100%;
+	background: #f6f2eb;
+	max-width: 1180px;
+	&::-webkit-scrollbar {
+		display: none;
+	}
+	scrollbar-width: 0;
+	overflow: visible;
+	padding: 100px 20px 40px 20px;
+	border-radius: 20px;
+	@media (min-width: $md5) {
+		border-radius: 60px;
+		padding: 60px;
+	}
+	.fancybox-button {
+		top: 30px;
+		right: 30px;
+		width: 60px;
+		height: 60px;
+		background: #fff;
+		border-radius: 50%;
+		transition: background-color 0.3s ease 0s, color 0.3s ease 0s;
+		@media (any-hover: hover) {
+			&:hover {
+				background: $accent;
+				color: #fff;
+			}
+		}
+	}
+}

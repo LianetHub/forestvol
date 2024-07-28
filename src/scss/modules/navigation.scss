@@ -1,0 +1,39 @@
+.breadcrumbs {
+    font-size: 12px;
+    font-weight: 300;
+    line-height: math.div(15, 12);
+    color: rgba($color: #1e1e1e, $alpha: 0.7);
+
+    // .breadcrumbs__item
+    &__item {
+        padding: em(5);
+        &:not(:first-child) {
+            position: relative;
+            padding-left: em(15);
+            margin: em(0) em(0) em(0) em(5);
+            &::after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                left: 0;
+                width: em(6, 19);
+                height: em(6, 19);
+                background: #8e7a6d;
+                border-radius: 2px;
+            }
+        }
+    }
+    // .breadcrumbs__link
+    &__link {
+        transition: color 0.3s ease 0s;
+        @media (any-hover: hover) {
+            &:hover {
+                color: $orange;
+            }
+        }
+        &.active {
+            pointer-events: none;
+        }
+    }
+}
