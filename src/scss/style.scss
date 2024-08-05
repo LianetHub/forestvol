@@ -68,7 +68,6 @@ body {
 	min-height: 100%;
 	display: flex;
 	flex-direction: column;
-
 	overflow: hidden;
 	@media (min-width: $md3) {
 		overflow: visible;
@@ -99,3 +98,4 @@ body {
 
 @import "pages/home";
 @import "pages/project";
+@import "pages/order";

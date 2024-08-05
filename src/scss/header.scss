@@ -6,12 +6,21 @@
 	z-index: 6;
 	padding: 16px 0;
 	@media (min-width: $md0) {
-		padding: 50px 0;
+		padding: 50px 0 30px;
 	}
 	// .header__body
 	&__body {
+		position: relative;
 		background: #fff;
+		border-radius: 10px;
+		border: 1px solid #dbdbdb;
 		padding: 14px 20px;
+		@media (min-width: $md-xxl) {
+			padding: 14px 40px 14px 20px;
+		}
+		&.open-contacts {
+			border-radius: 10px 10px 0 0;
+		}
 	}
 	// .header__logo
 	&__logo {
@@ -22,7 +31,10 @@
 		flex-shrink: 0;
 
 		& img {
-			max-width: 150px;
+			max-width: 110px;
+			@media (min-width: $md4) {
+				max-width: 150px;
+			}
 			@media (min-width: $md0) {
 				max-width: 216px;
 			}
@@ -33,7 +45,10 @@
 	}
 	// .header__whatsapp
 	&__whatsapp {
-		margin-right: 53px;
+		margin-right: 20px;
+		@media (min-width: $md-xxl) {
+			margin-right: 40px;
+		}
 		border-radius: 3px;
 		background: #dbdbdb;
 		padding: 7px 12px;
@@ -64,21 +79,38 @@
 	}
 	// .header__callback
 	&__callback {
-		margin-right: 30px;
 	}
 	// .header__callback-btn
 	&__callback-btn {
 		border-left: 1px solid #dbdbdb;
-		border-right: 1px solid #dbdbdb;
-		padding: 15px 30px;
-		gap: 128px;
 		color: $accent;
 		font-size: 16px;
 		font-weight: 700;
 		letter-spacing: 1.6px;
 		text-transform: uppercase;
+		border-right: 1px solid #dbdbdb;
+		padding: 10px 15px;
+		gap: 24px;
+		@media (min-width: $md2) {
+			gap: 32px;
+			padding: 10px 20px;
+		}
+		@media (min-width: $md0) {
+			padding: 10px 30px;
+			border-right: 0;
+		}
+		@media (min-width: $md-xxl) {
+			gap: 128px;
+		}
+		&.active {
+			color: #999;
+			&::before {
+				transform: rotate(180deg);
+			}
+		}
 		&::before {
 			order: 1;
+			transition: transform 0.3s ease 0s;
 		}
 		@media (any-hover: hover) {
 			&:hover {
@@ -87,29 +119,132 @@
 		}
 	}
 	// .header__callback-list
-	&__callback-list {
+	&__callback-body {
+		@media (min-width: $md5) {
+			position: absolute;
+			top: 100%;
+			left: -1px;
+			width: calc(100% + 3px);
+			background: #fff;
+			border-radius: 0 0 10px 10px;
+			padding: 27px 20px;
+			border: 1px solid #dbdbdb;
+			display: none;
+		}
 	}
-	// .header__callback-item
-	&__callback-item {
+	// .header__callback-content
+	&__callback-content {
+		gap: 10px;
+	}
+	// .header__callback-main
+	&__callback-main {
 	}
 	// .header__callback-link
 	&__callback-link {
+		color: $accent;
+		font-size: 24px;
+		font-weight: 600;
+		text-decoration-line: underline;
+		@media (any-hover: hover) {
+			&:hover {
+				text-decoration: none;
+			}
+		}
 	}
-	// .header__callback-btn
-	&__callback-btn {
+	// .header__callback-hint
+	&__callback-hint {
+		margin-top: 20px;
+		font-size: 16px;
+		font-weight: 700;
+		letter-spacing: 1.6px;
+		text-transform: uppercase;
+	}
+	// .header__callback-socials
+	&__callback-socials {
+		@media (min-width: $md5) {
+			align-self: center;
+		}
+		gap: 20px;
+	}
+	// .header__callback-social
+	&__callback-social {
+		border-radius: 90px;
+		border: 1px solid #999;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		font-size: 16px;
+		font-weight: 700;
+		letter-spacing: 1.6px;
+		text-transform: uppercase;
+		transition: color 0.3s ease 0s, background-color 0.3s ease 0s, border-color 0.3s ease 0s;
+		&::before {
+			order: 1;
+			color: $accent;
+			font-size: 24px;
+			@media (min-width: $md2) {
+				font-size: 30px;
+			}
+		}
+		gap: 20px;
+		padding: 10px 20px;
+		@media (min-width: $md2) {
+			padding: 16px 30px;
+		}
+		@media (min-width: $md1) {
+			padding: 20px 40px;
+			gap: 40px;
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				background: $accent;
+				border-color: $accent;
+				color: #fff;
+				&::before {
+					color: #fff;
+				}
+			}
+		}
+	}
+	// .header__callback-callback
+	&__callback-callback {
 	}
 	// .header__contacts
 	&__contacts {
-		border-left: 1px solid #dbdbdb;
-		border-right: 1px solid #dbdbdb;
+		position: relative;
+		margin-bottom: -16px;
+		margin-top: -14px;
+		align-self: flex-end;
+		display: none;
+		@media (min-width: $md0) {
+			display: block;
+		}
+		&::before {
+			content: "";
+			position: absolute;
+			top: 45%;
+			transform: translateY(-50%);
+			left: 0;
+			width: 1px;
+			height: 40px;
+			border-left: 1px solid #dbdbdb;
+		}
+		&::after {
+			content: "";
+			position: absolute;
+			top: 45%;
+			transform: translateY(-50%);
+			right: 0;
+			width: 1px;
+			height: 40px;
+			border-right: 1px solid #dbdbdb;
+		}
 	}
 	// .header__contacts-block
 	&__contacts-block {
-		padding-inline: 30px;
-		gap: 46px;
 		&:not(:last-child) {
-			margin-bottom: 12px;
-			padding-bottom: 12px;
+			margin-bottom: 8px;
+			padding-bottom: 8px;
 			border-bottom: 1px solid #dbdbdb;
 		}
 	}
@@ -118,25 +253,55 @@
 		transition: color 0.3s ease 0s;
 		font-weight: 700;
 		letter-spacing: 1.6px;
+
 		text-transform: uppercase;
+		padding-inline: 12px;
+		@media (min-width: $md-xxl) {
+			padding-inline: 30px;
+		}
 	}
 	// .header__contacts-city
 	&__contacts-city {
 		transition: color 0.3s ease 0s;
-		@media (any-hover: hover) {
-			&:hover {
-				color: #999;
+		color: #999;
+		padding-inline: 12px;
+		@media (min-width: $md-xxl) {
+			padding-inline: 27px;
+		}
+		padding-bottom: 12px;
+		display: inline-block;
+		&.current {
+			color: $text;
+			position: relative;
+			&::before {
+				content: "";
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				height: 2px;
+				background: $accent;
 			}
 		}
 	}
 	// .header__actions
 	&__actions {
-		margin-left: 40px;
-		gap: 20px;
+		margin-left: 10px;
+		gap: 10px;
+		@media (min-width: $md2) {
+			margin-left: 20px;
+			gap: 16px;
+		}
+		@media (min-width: $md-xxl) {
+			margin-left: 40px;
+		}
 	}
 	// .header__action
 	&__action {
-		font-size: 22px;
+		font-size: 18px;
+		@media (min-width: $md2) {
+			font-size: 22px;
+		}
 		transition: color 0.3s ease 0s;
 	}
 	// .header__menu-btn
@@ -167,31 +332,24 @@
 	@media (min-width: $md0) {
 		gap: 24px;
 	}
-	@media (min-width: $md-xxl) {
-		gap: 42px;
-	}
+
 	// .menu__content
 	&__content {
+	}
+	// .menu__body
+	&__body {
 		@media (max-width: $md3) {
 			background: #fff;
 			margin-left: auto;
 			height: 100%;
-			padding: calc(var(--header-height) + 10px) 20px 20px;
+			padding: 120px 20px 40px 20px;
 			transition: transform 0.3s ease 0s;
 			transform: translateX(100%);
 			overflow-y: auto;
+			width: 320px;
 			.header.open-menu & {
 				transform: none;
 			}
-		}
-	}
-	// .menu__body
-	&__body {
-		@media (min-width: $md3) {
-			background: #fff;
-			flex: 1 1 auto;
-
-			align-self: stretch;
 		}
 	}
 	// .menu__list
@@ -203,25 +361,21 @@
 		text-transform: uppercase;
 		justify-content: center;
 		@media (min-width: $md3) {
-			gap: 12px;
+			gap: 16px;
+		}
+		@media (min-width: $md2) {
+			gap: 20px;
 		}
 
 		@media (min-width: $md-xxl) {
-			gap: 24px;
+			gap: 40px;
 		}
 	}
 	// .menu__item
 	&__item {
 		&:hover {
 			.menu__link {
-				padding: 10px 10px;
-				margin: -10px -10px;
-				@media (min-width: $md-xxl) {
-					padding: 15px 18px;
-					margin: -15px -18px;
-				}
-				background: $accent;
-				color: #fff;
+				color: $accent;
 			}
 			.submenu {
 				opacity: 1;
@@ -233,18 +387,13 @@
 	&__link {
 		border-radius: 30px;
 		display: inline-block;
+
 		text-align: center;
 		position: relative;
 		z-index: 2;
+		transition: color 0.3s ease 0s;
 		&:hover {
-			padding: 10px 10px;
-			margin: -10px -10px;
-			@media (min-width: $md-xxl) {
-				padding: 15px 18px;
-				margin: -15px -18px;
-			}
-			background: $accent;
-			color: #fff;
+			color: $accent;
 		}
 	}
 	// .menu__actions

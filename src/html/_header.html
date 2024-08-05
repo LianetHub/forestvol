@@ -1,69 +1,66 @@
 <header class="header">
-    <div class="container">
-        <div class="header__body rounded d-flex align-items-center">
-            <a href="/" class="header__logo">
+    <div class="container-lg">
+        <div class="header__body d-flex align-items-center">
+            <a href="/" class="header__logo mr-lg-0 mr-auto">
                 <img src="@img/logo.png" alt="logo">
             </a>
             <div class="header__menu menu">
                 <nav class="menu__body">
-                    <ul class="menu__list d-flex">
+                    <ul class="menu__list d-flex flex-lg-row flex-column">
                         <li class="menu__item"><a href="" class="menu__link">Проекты</a></li>
                         <li class="menu__item"><a href="" class="menu__link">Компания</a></li>
                         <li class="menu__item"><a href="" class="menu__link">Готовые дома</a></li>
-                        <li class="menu__item"><a href="" class="menu__link">Еще</a></li>
+                        <li class="menu__item"><a href="" class="menu__link color-gray">Еще <span>...</span></a></li>
                     </ul>
                 </nav>
             </div>
-            <a href="" class="header__whatsapp d-flex align-items-center">
+            <a href="" class="header__whatsapp d-xl-flex d-none align-items-center">
                 <span class="header__whatsapp-icon">
                     <img src="@img/icons/whatsapp-color.svg" alt="icon whatsapp">
                 </span>
                 WhatsApp
             </a>
-            <div class="header__callback">
-                <span role="button" class="header__callback-btn icon-marker d-flex align-items-center justify-content-between">
+            <div class="header__callback mt-sm-0 mt-5" data-da=".menu__body, 575.98, last">
+                <span role="button" class="header__callback-btn icon-marker d-sm-flex d-none align-items-center justify-content-between">
                     Связаться
                 </span>
-                <ul class="header__callback-list d-none">
-                    <li class="header__callback-item">
-                        <a href="tel:+74992888743" class="header__callback-link">+7 (499) 288 87 43</a>
-                    </li>
-                    <li class="header__callback-item">
-                        <a href="" class="header__callback-link">Контакты</a>
-                    </li>
-                    <li class="header__callback-item">
-                        <a href="" class="header__callback-link">Телеграм</a>
-                    </li>
-                    <li class="header__callback-item">
-                        <a href="" class="header__callback-link">Вконтакте</a>
-                    </li>
-                    <li class="header__callback-item">
-                        <a href="" class="header__callback-btn btn btn-secondary">
+                <div class="header__callback-body">
+                    <div class="header__callback-content d-flex flex-sm-wrap justify-content-sm-between flex-sm-row flex-column">
+                        <div class="header__callback-main">
+                            <a href="tel:+74992888743" class="header__callback-link">+7 (499) 288 87 43</a>
+                            <div class="header__callback-hint">Контакты</div>
+                        </div>
+                        <div class="header__callback-socials d-flex flex-sm-row flex-column align-items-sm-center">
+                            <a href="" class="header__callback-social icon-telegram">Телеграм</a>
+                            <a href="" class="header__callback-social icon-vk">Вконтакте</a>
+                        </div>
+                        <a href="#callback" data-fancybox class="header__callback-callback btn btn-secondary">
                             Оставить заявку
                             <span class="btn__icon icon-arrow"></span>
                         </a>
-                    </li>
-                </ul>
+                    </div>
+                </div>
             </div>
             <div class="header__contacts">
                 <div class="header__contacts-block">
                     <a href="tel:+74992888743" class="header__contacts-link">+7 (499) 288 87 43</a>
                 </div>
                 <div class="header__contacts-block d-flex">
-                    <a href="" class="header__contacts-city">Москва</a>
+                    <a href="" class="header__contacts-city current">Москва</a>
                     <a href="" class="header__contacts-city">Санкт-Петербург</a>
                 </div>
             </div>
-            <div class="header__actions d-flex">
+            <div class="header__actions d-flex align-items-center">
                 <a href="" class="header__action icon-search"></a>
                 <a href="" class="header__action icon-favorite"></a>
                 <a href="" class="header__action icon-compare"></a>
+                <span role="button" class="header__action icon-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
             </div>
-            <span role="button" class="header__menu-btn icon-menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </span>
+
         </div>
     </div>
 </header>

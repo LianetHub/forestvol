@@ -1,36 +1,81 @@
 .project-card {
+	padding: $header 0 0;
 	// .project-card__back
 	&__back {
 	}
 	// .project-card__title
 	&__title {
+		margin-top: 88px;
+	}
+	// .project-card__header
+	&__header {
+		padding: 0 40px;
+		max-width: 1295px;
 	}
 	// .project-card__list
 	&__list {
+		margin-top: 70px;
+		border-top: 1px solid #dbdbdb;
+		padding-top: 60px;
 	}
 	// .project-card__list-item
 	&__list-item {
+		gap: 40px;
 	}
 	// .project-card__icon
 	&__icon {
+		width: 70px;
+		flex-shrink: 0;
 	}
 	// .project-card__body
 	&__body {
 	}
 	// .project-card__caption
 	&__caption {
+		font-size: 20px;
+		font-weight: 300;
+		line-height: 100%;
 	}
 	// .project-card__value
 	&__value {
+		margin-top: 10px;
 	}
 	// .project-card__main
 	&__main {
+		margin-top: 80px;
+		margin-left: -20px;
+		margin-right: -20px;
+		position: relative;
 	}
 	// .project-card__actions
 	&__actions {
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
 	}
 	// .project-card__action
 	&__action {
+		display: flex;
+		width: 80px;
+		height: 80px;
+		padding: 0px 30px;
+		font-size: 30px;
+		justify-content: center;
+		align-items: center;
+		border-radius: 10px;
+		border: 1px solid #dbdbdb;
+		background: #fff;
+		transition: color 0.3s ease 0s, background-color 0.3s ease 0s, border-color 0.3s ease 0s;
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: $accent;
+				border-color: $accent;
+				color: #fff;
+			}
+		}
 	}
 }
 

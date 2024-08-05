@@ -80,6 +80,12 @@ $(function () {
             $("body").removeClass("lock-menu");
         }
 
+        if ($target.is('.header__callback-btn')) {
+            $target.toggleClass('active');
+            $('.header__body').toggleClass('open-contacts');
+            $('.header__callback-body').slideToggle()
+        }
+
 
         if ($target.is('.menu__link') && $('body').hasClass('_touch')) {
 
@@ -111,7 +117,7 @@ $(function () {
             $('.examples__image').eq($target.index()).addClass('active fade').siblings().removeClass('active fade')
         }
 
-        //  visual block ++
+        //  visual block --
         if ($target.is('.visual__info-btn')) {
             let $currentAction = $target.parent(".visual__info-action");
             let $currentList = $target.next(".visual__info-list");
@@ -134,6 +140,22 @@ $(function () {
         }
 
 
+        if ($target.is('[data-tab]')) {
+            let currentTab = $target.data('tab');
+            let tabBtn = $(`[name="config"][value="${currentTab}"]`);
+            tabBtn.trigger('change');
+            tabBtn.trigger('click');
+        }
+
+        if ($target.is('[data-option]')) {
+            let currentTab = $target.data('option');
+            let tabBtn = $(`[value="${currentTab}"]`);
+            tabBtn.trigger('change');
+            tabBtn.trigger('click');
+            $.fancybox.getInstance().close()
+        }
+
+
 
     });
 
@@ -152,6 +174,18 @@ $(function () {
 
     });
 
+    if ($('[name="config"]').length > 0) {
+        $('[name="config"]').on('change', (e) => {
+
+            let $target = $(e.target);
+            let currentValue = $target.val()
+
+            $(`.order-more__content#${currentValue}`).addClass('active').siblings().removeClass('active')
+
+
+        })
+    }
+
 
 
     // fancybox settings
@@ -162,12 +196,32 @@ $(function () {
 
 
 
+
+
     // sliders
 
 
 
     if ($('.gallery__slider').length > 0) {
-        let gallerySlider = $('.gallery__slider').slick({
+        $('.gallery__slider').slick({
+            infinite: false,
+            variableWidth: true,
+            arrows: false,
+            responsive: [
+                {
+                    breakpoint: 768,
+                    settings: {
+                        variableWidth: false,
+                        slidesToShow: 1,
+                    }
+                }
+            ]
+        });
+
+    }
+
+    if ($('.completed-projects__slider').length > 0) {
+        $('.completed-projects__slider').slick({
             infinite: false,
             variableWidth: true,
             arrows: false,
@@ -176,7 +230,7 @@ $(function () {
                     breakpoint: 576,
                     settings: {
                         variableWidth: false,
-                        slidesToShow: 0.95,
+                        slidesToShow: 1,
                     }
                 }
             ]
@@ -185,10 +239,19 @@ $(function () {
     }
 
     if ($('.projects__slider').length > 0) {
-        let projects = $('.projects__slider').slick({
+        $('.projects__slider').slick({
             infinite: false,
             variableWidth: true,
             arrows: false,
+            responsive: [
+                {
+                    breakpoint: 576,
+                    settings: {
+                        variableWidth: false,
+                        slidesToShow: 1,
+                    }
+                }
+            ]
         });
 
     }
@@ -269,7 +332,156 @@ $(function () {
     });
 
 
+    // move block on adaptive
 
+    function DynamicAdapt(type) {
+        this.type = type;
+    }
+
+    DynamicAdapt.prototype.init = function () {
+        const _this = this;
+        this.оbjects = [];
+        this.daClassname = "_dynamic_adapt_";
+        this.nodes = document.querySelectorAll("[data-da]");
+
+
+        for (let i = 0; i < this.nodes.length; i++) {
+            const node = this.nodes[i];
+            const data = node.dataset.da.trim();
+            const dataArray = data.split(",");
+            const оbject = {};
+            оbject.element = node;
+            оbject.parent = node.parentNode;
+            оbject.destination = document.querySelector(dataArray[0].trim());
+            оbject.breakpoint = dataArray[1] ? dataArray[1].trim() : "767";
+            оbject.place = dataArray[2] ? dataArray[2].trim() : "last";
+            оbject.index = this.indexInParent(оbject.parent, оbject.element);
+            this.оbjects.push(оbject);
+        }
+
+        this.arraySort(this.оbjects);
+
+
+        this.mediaQueries = Array.prototype.map.call(this.оbjects, function (item) {
+            return '(' + this.type + "-width: " + item.breakpoint + "px)," + item.breakpoint;
+        }, this);
+        this.mediaQueries = Array.prototype.filter.call(this.mediaQueries, function (item, index, self) {
+            return Array.prototype.indexOf.call(self, item) === index;
+        });
+
+
+        for (let i = 0; i < this.mediaQueries.length; i++) {
+            const media = this.mediaQueries[i];
+            const mediaSplit = String.prototype.split.call(media, ',');
+            const matchMedia = window.matchMedia(mediaSplit[0]);
+            const mediaBreakpoint = mediaSplit[1];
+
+
+            const оbjectsFilter = Array.prototype.filter.call(this.оbjects, function (item) {
+                return item.breakpoint === mediaBreakpoint;
+            });
+            matchMedia.addListener(function () {
+                _this.mediaHandler(matchMedia, оbjectsFilter);
+            });
+            this.mediaHandler(matchMedia, оbjectsFilter);
+        }
+    };
+
+    DynamicAdapt.prototype.mediaHandler = function (matchMedia, оbjects) {
+        if (matchMedia.matches) {
+            for (let i = 0; i < оbjects.length; i++) {
+                const оbject = оbjects[i];
+                оbject.index = this.indexInParent(оbject.parent, оbject.element);
+                this.moveTo(оbject.place, оbject.element, оbject.destination);
+            }
+        } else {
+            for (let i = 0; i < оbjects.length; i++) {
+                const оbject = оbjects[i];
+                if (оbject.element.classList.contains(this.daClassname)) {
+                    this.moveBack(оbject.parent, оbject.element, оbject.index);
+                }
+            }
+        }
+    };
+
+
+    DynamicAdapt.prototype.moveTo = function (place, element, destination) {
+        element.classList.add(this.daClassname);
+        if (place === 'last' || place >= destination.children.length) {
+            destination.insertAdjacentElement('beforeend', element);
+            return;
+        }
+        if (place === 'first') {
+            destination.insertAdjacentElement('afterbegin', element);
+            return;
+        }
+        destination.children[place].insertAdjacentElement('beforebegin', element);
+    }
+
+
+    DynamicAdapt.prototype.moveBack = function (parent, element, index) {
+        element.classList.remove(this.daClassname);
+        if (parent.children[index] !== undefined) {
+            parent.children[index].insertAdjacentElement('beforebegin', element);
+        } else {
+            parent.insertAdjacentElement('beforeend', element);
+        }
+    }
+
+
+    DynamicAdapt.prototype.indexInParent = function (parent, element) {
+        const array = Array.prototype.slice.call(parent.children);
+        return Array.prototype.indexOf.call(array, element);
+    };
+
+
+    DynamicAdapt.prototype.arraySort = function (arr) {
+        if (this.type === "min") {
+            Array.prototype.sort.call(arr, function (a, b) {
+                if (a.breakpoint === b.breakpoint) {
+                    if (a.place === b.place) {
+                        return 0;
+                    }
+
+                    if (a.place === "first" || b.place === "last") {
+                        return -1;
+                    }
+
+                    if (a.place === "last" || b.place === "first") {
+                        return 1;
+                    }
+
+                    return a.place - b.place;
+                }
+
+                return a.breakpoint - b.breakpoint;
+            });
+        } else {
+            Array.prototype.sort.call(arr, function (a, b) {
+                if (a.breakpoint === b.breakpoint) {
+                    if (a.place === b.place) {
+                        return 0;
+                    }
+
+                    if (a.place === "first" || b.place === "last") {
+                        return 1;
+                    }
+
+                    if (a.place === "last" || b.place === "first") {
+                        return -1;
+                    }
+
+                    return b.place - a.place;
+                }
+
+                return b.breakpoint - a.breakpoint;
+            });
+            return;
+        }
+    };
+
+    const da = new DynamicAdapt("max");
+    da.init();
 
 
 
