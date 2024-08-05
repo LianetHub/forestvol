@@ -10,6 +10,16 @@
 			height: 940px;
 		}
 		margin: 0 -20px;
+		position: relative;
+	}
+	// .promo__overlay
+	&__overlay {
+		background: rgba($color: #000000, $alpha: 0.25);
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
 	}
 	// .promo__body
 	&__body {
@@ -19,6 +29,10 @@
 		left: 0;
 		right: 0;
 		z-index: 2;
+		overflow: hidden;
+	}
+	// .promo__main
+	&__main {
 		border-top: 1px solid rgba($color: #fff, $alpha: 0.4);
 		padding: 40px 0px 55px;
 		@media (min-width: $md0) {
@@ -98,6 +112,13 @@
 		@media (min-width: $md4) {
 			margin: 0 -20px;
 		}
+
+		display: flex;
+		flex-direction: column;
+		gap: 30px;
+		@media (min-width: $md3) {
+			flex-direction: row;
+		}
 		.slick-list {
 			overflow: visible;
 		}
@@ -109,8 +130,9 @@
 	&__slide {
 		position: relative;
 		display: block;
-		&:not(:last-child) {
-			margin-right: 30px;
+		flex-shrink: 0;
+		@media (min-width: $md3) {
+			margin-top: $header;
 		}
 		& > img {
 			min-height: 360px;
@@ -509,6 +531,10 @@
 			margin-top: -750px;
 		}
 	}
+	padding: 50px 0;
+	@media (min-width: $md3) {
+		padding: 100px 0;
+	}
 	// .completed-projects__header
 	&__header {
 		row-gap: 20px;
@@ -734,6 +760,12 @@
 	padding: 50px 0;
 	@media (min-width: $md3) {
 		padding: 100px 0;
+	}
+	&:last-child {
+		padding-bottom: 100px;
+		@media (min-width: $md3) {
+			padding-bottom: 200px;
+		}
 	}
 	// .individual__content
 	&__content {

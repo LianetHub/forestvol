@@ -224,6 +224,31 @@ textarea.form-control {
 			border-color: darken($color: $accent, $amount: 15);
 		}
 	}
+	&.btn-white-full {
+		background: #fff;
+		border-color: #fff;
+		color: $text;
+		.btn__icon {
+			color: #fff;
+			&::before {
+				transform: rotate(90deg);
+			}
+			&::after {
+				background: $text;
+			}
+		}
+		&:hover {
+			border-color: transparent;
+			color: #fff;
+		}
+		&:focus {
+			box-shadow: 0 0 0 0.2rem rgba($color: $accent, $alpha: 0.5);
+		}
+		&:not(:disabled):not(.disabled):active {
+			background-color: darken($color: $accent, $amount: 15);
+			border-color: darken($color: $accent, $amount: 15);
+		}
+	}
 	&.btn-secondary {
 		background: $accent;
 		border-color: $accent;
