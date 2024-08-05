@@ -1,0 +1,87 @@
+@font-face {
+  font-family: 'icons';
+  src:  url('fonts/icons.eot?gnq1dj');
+  src:  url('fonts/icons.eot?gnq1dj#iefix') format('embedded-opentype'),
+    url('fonts/icons.ttf?gnq1dj') format('truetype'),
+    url('fonts/icons.woff?gnq1dj') format('woff'),
+    url('fonts/icons.svg?gnq1dj#icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icons' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-share:before {
+  content: "\e913";
+}
+.icon-question-mark:before {
+  content: "\e912";
+}
+.icon-arrow:before {
+  content: "\e900";
+}
+.icon-camera:before {
+  content: "\e901";
+}
+.icon-check:before {
+  content: "\e902";
+}
+.icon-check-circle:before {
+  content: "\e903";
+}
+.icon-close:before {
+  content: "\e904";
+}
+.icon-compare:before {
+  content: "\e905";
+}
+.icon-download:before {
+  content: "\e906";
+}
+.icon-edit:before {
+  content: "\e907";
+}
+.icon-favorite:before {
+  content: "\e908";
+}
+.icon-map:before {
+  content: "\e909";
+}
+.icon-marker:before {
+  content: "\e90a";
+}
+.icon-phone:before {
+  content: "\e90b";
+}
+.icon-question:before {
+  content: "\e90c";
+}
+.icon-search:before {
+  content: "\e90d";
+}
+.icon-telegram:before {
+  content: "\e90e";
+}
+.icon-vk:before {
+  content: "\e90f";
+}
+.icon-whatsapp:before {
+  content: "\e910";
+}
+.icon-youtube:before {
+  content: "\e911";
+}

@@ -1,53 +1,120 @@
 <footer class="footer">
     <div class="container">
-        <div class="footer__header d-flex justify-content-between align-items-lg-center flex-lg-row flex-column">
-            <h2 class="footer__title title">
-                Свяжитесь с нами <br> сегодня
-            </h2>
-            <a href="tel:+78001234567" class="footer__phone title">+ 7 (800) 123-45-67</a>
+        <div class="footer__header d-flex justify-content-between align-items-center">
+            <a href="/" class="footer__logo">
+                <img src="@img/logo-white.png" alt="logo">
+            </a>
+            <a href="" class="footer__callback btn btn-secondary">
+                Оставить заявку
+                <span class="btn__icon icon-check"></span>
+            </a>
         </div>
-        <div class="footer__body">
+        <nav aria-label="Меню в подвале" class="footer__menu">
             <div class="row">
-                <div class="col-lg-6 col-12">
-                    <div class="footer__card d-flex flex-column">
-                        <div class="footer__card-caption font-weight-bold">Адрес офиса</div>
-                        <div class="footer__card-body d-flex justify-content-between flex-wrap">
-                            <address class="footer__card-address">
-                                Санкт-Петербург <br>
-                                192007, Камчатская ул, д. 9, литера В, помещ. 6н
-                            </address>
-                            <a href="" class="footer__card-btn btn btn-primary">Построить маршрут</a>
+                <div class="col-3">
+                    <div class="footer__menu-caption">Проекты</div>
+                    <ul class="footer__menu-list">
+                        <li class="footer__menu-item"><a href="" class="footer__menu-link">110 м²</a></li>
+                        <li class="footer__menu-item"><a href="" class="footer__menu-link">100-170 м²</a></li>
+                        <li class="footer__menu-item"><a href="" class="footer__menu-link">Свыше 170 м²</a></li>
+                        <li class="footer__menu-item"><a href="" class="footer__menu-link">до 3 млн ₽</a></li>
+                        <li class="footer__menu-item"><a href="" class="footer__menu-link">3-5 млн ₽</a></li>
+                        <li class="footer__menu-item"><a href="" class="footer__menu-link">свыше 4.5 млн ₽</a></li>
+                        <li class="footer__menu-item"><a href="" class="footer__menu-link">Одноэтажные</a></li>
+                        <li class="footer__menu-item"><a href="" class="footer__menu-link">Двухэтажные</a></li>
+                        <li class="footer__menu-item"><a href="" class="footer__menu-link">Акции</a></li>
+                    </ul>
+                </div>
+                <div class="col-3">
+                    <div class="footer__menu-caption">Компания</div>
+                    <ul class="footer__menu-list">
+                        <li class="footer__menu-item"><a href="" class="footer__menu-link">О нас</a></li>
+                        <li class="footer__menu-item"><a href="" class="footer__menu-link">Услуги</a></li>
+                        <li class="footer__menu-item"><a href="" class="footer__menu-link">Технологии строительства</a></li>
+                        <li class="footer__menu-item"><a href="" class="footer__menu-link">Гарантии</a></li>
+                        <li class="footer__menu-item"><a href="" class="footer__menu-link">Частые вопросы</a></li>
+                        <li class="footer__menu-item"><a href="" class="footer__menu-link">Отзывы</a></li>
+                        <li class="footer__menu-item"><a href="" class="footer__menu-link">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="col-3">
+                    <div class="footer__menu-caption">География строительства</div>
+                    <ul class="footer__menu-list">
+                        <li class="footer__menu-item"><a href="" class="footer__menu-link">Все работы списком</a></li>
+                        <li class="footer__menu-item"><a href="" class="footer__menu-link">Работы на карте</a></li>
+                    </ul>
+                    <div class="footer__menu-caption">Галерея</div>
+                    <ul class="footer__menu-list">
+                        <li class="footer__menu-item"><a href="" class="footer__menu-link">Дома</a></li>
+                        <li class="footer__menu-item"><a href="" class="footer__menu-link">Отделка</a></li>
+                        <li class="footer__menu-item"><a href="" class="footer__menu-link">Производство</a></li>
+                    </ul>
+                </div>
+                <div class="col-3">
+                    <div class="footer__menu-caption">Готовые дома</div>
+                    <ul class="footer__menu-list">
+                        <li class="footer__menu-item"><a href="" class="footer__menu-link">до 100 м²</a></li>
+                        <li class="footer__menu-item"><a href="" class="footer__menu-link">Свыше 170 м²</a></li>
+                        <li class="footer__menu-item"><a href="" class="footer__menu-link">до 3 млн ₽</a></li>
+                        <li class="footer__menu-item"><a href="" class="footer__menu-link">свыше 4.5 млн ₽</a></li>
+                        <li class="footer__menu-item"><a href="" class="footer__menu-link">Одноэтажные</a></li>
+                        <li class="footer__menu-item"><a href="" class="footer__menu-link">Двухэтажные</a></li>
+                        <li class="footer__menu-item"><a href="" class="footer__menu-link">Акции</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="footer__contacts rounded">
+            <div class="row">
+                <div class="col-3">
+                    <div class="footer__contacts-block d-flex flex-column align-items-start justify-content-end h-100">
+                        <div class="footer__contacts-label rounded">Контакты офисов</div>
+                        <address class="footer__contacts-address">
+                            Санкт-Петербург <br>
+                            Измайловский проспект, д. 7 <br>
+                            пн — пт с 09:00 до 20:00
+                        </address>
+                        <a href="tel:+74992868743" class="footer__contacts-link">+7 (499) 286-87-43</a>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="footer__contacts-block d-flex flex-column align-items-start justify-content-end h-100">
+                        <address class="footer__contacts-address">
+                            Москва <br>
+                            Дмитровское шоссе, 81 <br>
+                            пн — пт с 09:00 до 20:00
+                        </address>
+                        <a href="tel:+74992868743" class="footer__contacts-link">+7 (812) 424-78-93</a>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="footer__contacts-block d-flex flex-column align-items-start justify-content-end h-100">
+                        <div class="footer__contacts-label rounded">Наши соцсети</div>
+                        <div class="footer__contacts-socials d-flex mt-auto">
+                            <a href="" class="footer__contacts-social d-flex flex-column icon-youtube">Youtube</a>
+                            <a href="" class="footer__contacts-social d-flex flex-column icon-vk">Вконтакте</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="footer__card d-flex flex-column">
-                        <div class="footer__card-caption font-weight-bold">Наши соц.сети</div>
-                        <div class="footer__socials socials d-flex">
-                            <a href="" class="socials__item icon-vk"></a>
-                            <a href="" class="socials__item icon-youtube"></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="footer__card d-flex flex-column">
-                        <div class="footer__card-caption font-weight-bold">Пишите нам</div>
-                        <div class="footer__socials socials d-flex">
-                            <a href="" class="socials__item icon-telegram"></a>
-                            <a href="" class="socials__item icon-whatsapp"></a>
+                <div class="col-3">
+                    <div class="footer__contacts-block d-flex flex-column align-items-start justify-content-end h-100">
+                        <div class="footer__contacts-label rounded">Написать нам</div>
+                        <div class="footer__contacts-socials d-flex mt-auto">
+                            <a href="" class="footer__contacts-social d-flex flex-column icon-telegram">Telegram</a>
+                            <a href="" class="footer__contacts-social d-flex flex-column icon-whatsapp">WhatsApp</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="footer__bottom d-flex justify-content-between align-items-end flex-wrap">
-            <div class="footer__copy">
-                2024 ©&nbsp;Информация, представленная на&nbsp;сайте, не&nbsp;является публичной офертой. Цены на&nbsp;сайте носят ознакомительный характер. Уточняйте актуальные цены у&nbsp;менеджера.
+        <div class="footer__bottom d-flex align-items-center justify-content-between flex-wrap">
+            <div class="footer__privacy">
+                1998 — 2024 © «Вологодское зодчество». Любое копирование информации запрещено. Все права защищены.
             </div>
             <a href="" class="footer__privacy">Политика конфиденциальности</a>
-            <a href="" class="footer__prod">
+            <a href="" class="footer__prod d-flex align-items-center">
                 Разработка сайта
-                <img src="@img/prod-logo.png" alt="Бобры">
+                <img src="@img/prod-logo.svg" alt="prod">
             </a>
         </div>
     </div>

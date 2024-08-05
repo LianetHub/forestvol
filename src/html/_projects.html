@@ -1,0 +1,21 @@
+<section class="projects">
+    <div class="container">
+        <div class="projects__header">
+            <div class="row align-items-end">
+                <div class="col-6">
+                    <h2 class="projects__title title">
+                        @@title
+                    </h2>
+                </div>
+                <div class="col-6">
+                    <div class="projects__years">
+                        @@desc
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="projects__slider">
+            @@loop('_project.html', 'html/json/projects.json')
+        </div>
+    </div>
+</section>

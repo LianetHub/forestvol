@@ -1,12 +1,345 @@
 <!DOCTYPE html>
 <html lang="ru">
-    @@include('html/_head.html', { 'title': 'Вологодское зодчество' })
+    @@include('html/_head.html', {
+    'title': 'Вологодское зодчество | Главная'
+    })
 
     <body>
         <div class="wrapper">
             @@include('html/_header.html', {})
             <main class="page">
-
+                <section class="promo">
+                    <div class="container">
+                        <div class="promo__content">
+                            <div class="promo__image">
+                                <img src="@img/promo.jpg" class="cover-image rounded" alt="Promo">
+                            </div>
+                            <div class="promo__body">
+                                <div class="row">
+                                    <div class="col-7">
+                                        <h1 class="promo__title title-xl">
+                                            Гарантия качества и&nbsp;<span class="color-yellow">спокойствие</span> в&nbsp;процессе строительства
+                                        </h1>
+                                    </div>
+                                    <div class="col-5">
+                                        <p class="promo__desc">
+                                            Строим дома из&nbsp;клееного бруса
+                                            с&nbsp;1998 года
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="desc">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-6">
+                                <h2 class="desc__title title-sm">«Вологодское зодчество»</h2>
+                            </div>
+                            <div class="col-6">
+                                <div class="desc__text">
+                                    <p>Мы начали свой путь в регионе, издавна славившемся мастерами деревянного зодчества.</p>
+                                    <p>Нам удалось сохранить вековые традиции и совместить их с современными технологиями деревянного домостроения</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <a href="" class="desc__btn btn btn-primary">
+                                    Подробнее о компании
+                                    <span class="btn__icon icon-arrow"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div class="gallery">
+                    <div class="container">
+                        <div class="gallery__slider">
+                            <div class="gallery__slide">
+                                <img src="@img/gallery/01.jpg" class="cover-image rounded" alt="gallery">
+                                <span class="gallery__slide-info">
+                                    <span class="gallery__slide-label rounded">
+                                        <img src="@img/icons/benefit-1.svg" alt="icon">
+                                        <span class="gallery__slide-text">Одно из самых больших производств в России</span>
+                                    </span>
+                                </span>
+                            </div>
+                            <div class="gallery__slide">
+                                <img src="@img/gallery/02.jpg" class="cover-image rounded" alt="gallery">
+                                <span class="gallery__slide-info">
+                                    <span class="gallery__slide-label rounded">
+                                        <img src="@img/icons/benefit-2.svg" alt="icon">
+                                        <span class="gallery__slide-text">Качественные и долговечные материалы</span>
+                                    </span>
+                                </span>
+                            </div>
+                            <div class="gallery__slide">
+                                <img src="@img/gallery/01.jpg" class="cover-image rounded" alt="gallery">
+                                <span class="gallery__slide-info">
+                                    <span class="gallery__slide-label rounded">
+                                        <img src="@img/icons/benefit-1.svg" alt="icon">
+                                        <span class="gallery__slide-text">Одно из самых больших производств в России</span>
+                                    </span>
+                                </span>
+                            </div>
+                            <div class="gallery__slide">
+                                <img src="@img/gallery/02.jpg" class="cover-image rounded" alt="gallery">
+                                <span class="gallery__slide-info">
+                                    <span class="gallery__slide-label rounded">
+                                        <img src="@img/icons/benefit-2.svg" alt="icon">
+                                        <span class="gallery__slide-text">Качественные и долговечные материалы</span>
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @@include('./html/_projects.html', {
+                "title": "Популярные <br> проекты домов",
+                "desc": "2023 — 2024"
+                })
+                <section class="geo">
+                    <div class="container">
+                        <div class="geo__header">
+                            <div class="row">
+                                <div class="col-5">
+                                    <div class="geo__main h-100 d-flex flex-column justify-content-between">
+                                        <div class="geo__tagline title-sm">
+                                            География строительства
+                                        </div>
+                                        <a href="" class="geo__btn btn btn-white">
+                                            Все работы на карте
+                                            <span class="btn__icon icon-map"></span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-6 offset-1">
+                                    <h2 class="geo__title title-xl">
+                                        Построили более <br>
+                                        <span class="color-yellow">10 000 м² домов</span>
+                                        <br> в 18 регионах
+                                        <br> России за 25 лет
+                                    </h2>
+                                    <div class="geo__map">
+                                        <img src="@img/map.jpg" alt="map">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="choose">
+                    <div class="container">
+                        <div class="choose__header">
+                            <div class="row align-items-end">
+                                <div class="col-6">
+                                    <h2 class="choose__title title">
+                                        Подберите <br> проект под себя
+                                    </h2>
+                                </div>
+                                <div class="col-6">
+                                    <p class="choose__info">
+                                        из нашего каталога
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="choose__list">
+                            <li class="choose__item">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <div class="choose__item-caption title-md">Технология</div>
+                                    </div>
+                                    <div class="col-8">
+                                        <div class="choose__item-options d-flex flex-wrap">
+                                            <a href="" class="choose__item-option">Бревно</a>
+                                            <a href="" class="choose__item-option">Клееный брус</a>
+                                            <a href="" class="choose__item-option">Комбинированная</a>
+                                            <a href="" class="choose__item-option">все равно/не разбираюсь</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="choose__item">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <div class="choose__item-caption title-md">Площадь</div>
+                                    </div>
+                                    <div class="col-8">
+                                        <div class="choose__item-options d-flex flex-wrap">
+                                            <a href="" class="choose__item-option">до 100 м²</a>
+                                            <a href="" class="choose__item-option">100-170 м²</a>
+                                            <a href="" class="choose__item-option">свыше 170 м²</a>
+                                            <a href="" class="choose__item-option">Площать не равна</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="choose__item">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <div class="choose__item-caption title-md">Этажность</div>
+                                    </div>
+                                    <div class="col-8">
+                                        <div class="choose__item-options d-flex flex-wrap">
+                                            <a href="" class="choose__item-option">Одноэтажные</a>
+                                            <a href="" class="choose__item-option">Двухэтажные</a>
+                                            <a href="" class="choose__item-option">Этажность не важна</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="choose__bottom d-flex">
+                            <a href="" download="" class="choose__btn btn btn-primary ml-auto">
+                                Скачать каталог
+                                <span class="btn__icon icon-download"></span>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+                @@include('./html/_individual.html')
+                <section class="blog">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-3">
+                                <div class="blog__main h-100 d-flex flex-column justify-content-between">
+                                    <h2 class="blog__title title-sm">Блог Вконтакте</h2>
+                                    <a href="" class="blog__btn btn btn-primary">
+                                        Перейти в сообщество
+                                        <span class="btn__icon icon-arrow"></span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-9">
+                                <ul class="blog__list row">
+                                    <li class="blog__item d-flex flex-column col-6">
+                                        <a href="" class="blog__item-image rounded">
+                                            <img src="@img/blog/01.jpg" class="cover-image rounded" alt="poster">
+                                        </a>
+                                        <div class="blog__item-desc rounded d-flex flex-column">
+                                            <time datetime="2024-05-07T15:37:00" class="blog__item-time">7 мая в 15:37</time>
+                                            <div class="blog__item-body d-flex">
+                                                <div class="blog__item-text">
+                                                    <p>
+                                                        Строительство домов из дерева — наша профессия, которой мы занимается больше 25 лет! Относимся
+                                                    </p>
+                                                    <p>
+                                                        к каждому дому и к каждому заказчику как к единственному, именно поэтому мы с чистой ...
+                                                    </p>
+                                                </div>
+                                                <a href="" class="blog__item-more more-link icon-arrow flex-shrink-0"></a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="blog__item d-flex flex-column col-6">
+                                        <a href="" class="blog__item-image rounded">
+                                            <img src="@img/blog/02.jpg" class="cover-image rounded" alt="poster">
+                                        </a>
+                                        <div class="blog__item-desc rounded d-flex flex-column">
+                                            <time datetime="2024-05-07T15:37:00" class="blog__item-time">7 мая в 15:37</time>
+                                            <div class="blog__item-body d-flex">
+                                                <div class="blog__item-text">
+                                                    <p>
+                                                        С праздником, волшебный город! 321 год Санкт-Петербургу! Неиссякаемый источник вдохновения.
+                                                    </p>
+                                                </div>
+                                                <a href="" class="blog__item-more more-link icon-arrow flex-shrink-0"></a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="blog__item d-flex flex-column col-6">
+                                        <a href="" class="blog__item-image rounded">
+                                            <img src="@img/blog/03.jpg" class="cover-image rounded" alt="poster">
+                                        </a>
+                                        <div class="blog__item-desc rounded d-flex flex-column">
+                                            <time datetime="2024-05-07T15:37:00" class="blog__item-time">7 мая в 15:37</time>
+                                            <div class="blog__item-body d-flex">
+                                                <div class="blog__item-text">
+                                                    <p>
+                                                        БЕСТСЕЛЛЕР | ПРОЕКТ №ВЗ-321 "МИЛЛЕР"
+                                                    </p>
+                                                </div>
+                                                <a href="" class="blog__item-more more-link icon-arrow flex-shrink-0"></a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="blog__item d-flex flex-column col-6">
+                                        <a href="" class="blog__item-image rounded">
+                                            <img src="@img/blog/04.jpg" class="cover-image rounded" alt="poster">
+                                        </a>
+                                        <div class="blog__item-desc rounded d-flex flex-column">
+                                            <time datetime="2024-05-07T15:37:00" class="blog__item-time">7 мая в 15:37</time>
+                                            <div class="blog__item-body d-flex">
+                                                <div class="blog__item-text">
+                                                    <p>
+                                                        МИЛЛЕР | ЭТАП ОТДЕЛКИ - КРАСИМ И ЗАЩИЩАЕМ.
+                                                    </p>
+                                                    <p>
+                                                        Дом выполнен на основе классического проекта №ВЗ-321 "Миллер": Но с индивидуальными доработками заказчика - увеличена терраса,  над
+                                                    </p>
+                                                </div>
+                                                <a href="" class="blog__item-more more-link icon-arrow flex-shrink-0"></a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="blog">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-3">
+                                <div class="blog__main h-100 d-flex flex-column justify-content-between">
+                                    <h2 class="blog__title title-sm">Канал на Youtube</h2>
+                                    <a href="" class="blog__btn btn btn-primary">
+                                        Перейти на канал
+                                        <span class="btn__icon icon-arrow"></span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-9">
+                                <ul class="blog__list row">
+                                    <li class="blog__item">
+                                        <a href="" class="blog__media d-flex flex-column  rounded">
+                                            <span class="blog__media-image rounded">
+                                                <img src="@img/media/01.jpg" class="cover-image rounded" alt="poster">
+                                            </span>
+                                            <span class="blog__media-content d-flex flex-column justify-content-end">
+                                                <span class="blog__media-btn play-btn align-self-center"></span>
+                                                <span class="blog__media-info d-flex flex-column">
+                                                    <time datetime="2024-05-07T15:37:00" class="blog__media-date">7 месяцев</time>
+                                                    <span class="blog__media-title title-md">
+                                                        Как построить Красивый Дом из Дерева | <br> Строительство Деревянных Домов
+                                                    </span>
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="blog__item">
+                                        <a href="" class="blog__media d-flex flex-column  rounded">
+                                            <span class="blog__media-image rounded">
+                                                <img src="@img/media/02.jpg" class="cover-image rounded" alt="poster">
+                                            </span>
+                                            <span class="blog__media-content d-flex flex-column justify-content-end">
+                                                <span class="blog__media-btn play-btn align-self-center"></span>
+                                                <span class="blog__media-info d-flex flex-column">
+                                                    <time datetime="2024-05-07T15:37:00" class="blog__media-date">7 месяцев</time>
+                                                    <span class="blog__media-title title-md">
+                                                        Как мы заключили 21 проектирование <br> на выставке за 2 дня
+                                                    </span>
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </main>
             @@include('html/_footer.html', {})
         </div>

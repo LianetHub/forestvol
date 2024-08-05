@@ -1,26 +1,50 @@
-<div class="col-xl-4 col-sm-6">
-    <a href="" class="projects__card d-flex flex-column rounded-sm">
-        <span class="projects__card-labels d-flex align-items-center flex-wrap">
-            <span class="projects__card-label">
-                @@label
-            </span>
-            @@if(hasGreenLabel===true) {
-            <span class="projects__card-label green">
-                @@greenLabel
-            </span>
-            }
-        </span>
-        <span class="projects__card-image">
-            <img src="@img/projects/@@url.jpg" class="cover-image" alt="Фото проекта">
-        </span>
-        <span class="projects__card-body">
-            <span class="projects__card-desc">@@desc</span>
-            <span class="projects__card-footer d-flex align-items-center justify-content-between">
-                <span class="projects__card-price">
-                    от&nbsp;<strong>@@price</strong>&nbsp;млн ₽
+<div class="projects__item">
+    <div class="projects__item-images">
+        <div class="projects__item-slider">
+            <a href="@img/projects/@@index.jpg" data-fancybox="gallery-@@id" class="projects__item-slide rounded">
+                <img src="@img/projects/@@index.jpg" class="cover-image rounded" alt="Фото проекта">
+            </a>
+            <a href="@img/projects/02.jpg" data-fancybox="gallery-@@id" class="projects__item-slide rounded">
+                <img src="@img/projects/02.jpg" class="cover-image rounded" alt="Фото проекта">
+            </a>
+            <a href="@img/projects/03.jpg" data-fancybox="gallery-@@id" class="projects__item-slide rounded">
+                <img src="@img/projects/03.jpg" class="cover-image rounded" alt="Фото проекта">
+            </a>
+            <a href="@img/projects/01.jpg" data-fancybox="gallery-@@id" class="projects__item-slide rounded">
+                <img src="@img/projects/01.jpg" class="cover-image rounded" alt="Фото проекта">
+            </a>
+            <a href="@img/projects/02.jpg" data-fancybox="gallery-@@id" class="projects__item-slide rounded">
+                <img src="@img/projects/02.jpg" class="cover-image rounded" alt="Фото проекта">
+                <span class="projects__item-all">
+                    <span class="projects__item-all-content icon-camera">
+                        еще 12 фото
+                    </span>
                 </span>
-                <span class="projects__card-more icon-arrow-short"></span>
-            </span>
-        </span>
-    </a>
+            </a>
+        </div>
+
+        <a href="" class="projects__item-more more-link icon-arrow"></a>
+    </div>
+    <div class="projects__item-body">
+        <div class="projects__item-main">
+            <a href="" class="projects__item-name">
+                @@name
+                <span class="projects__item-articul">@@art</span>
+            </a>
+            <div class="projects__item-props">
+                <div class="projects__item-size">
+                    <img src="@img/icons/size.svg" alt="icon">
+                    @@size
+                </div>
+                <div class="projects__item-square">
+                    <img src="@img/icons/square.svg" alt="icon">
+                    @@square м²
+                </div>
+            </div>
+        </div>
+        <div class="projects__item-actions">
+            <span role="button" aria-label="Добавить в избранное" class="projects__item-action icon-favorite"></span>
+            <span role="button" aria-label="Сравнить" class="projects__item-action icon-compare"></span>
+        </div>
+    </div>
 </div>

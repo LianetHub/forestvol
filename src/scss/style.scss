@@ -19,8 +19,7 @@
 // ======================================ИКОНОЧНЫЙ ШРИФТ======================================
 
 // Шрифт по умолчанию
-$fontfamily: "Verdana";
-$font-prosto-one: "ProstoOne";
+$fontfamily: "Gilroy";
 // Шрифт по умолчанию
 
 // ПЕРЕМЕННЫЕ
@@ -37,11 +36,11 @@ $md3: 991.98px;
 $md4: 767.98px;
 $md5: 575.98px;
 
-$text: #000;
-$accent: #294835;
+$text: #242424;
+$accent: #f0a721;
 $secondary: #d4cd8e;
 
-$raduis: rem(30);
+$header: var(--header-height, 195px);
 
 // ПЕРЕМЕННЫЕ
 
@@ -99,3 +98,4 @@ body {
 // =======================ОСНОВНОЙ БЛОК===================
 
 @import "pages/home";
+@import "pages/project";

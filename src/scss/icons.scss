@@ -18,39 +18,63 @@
 	}
 }
 
-.icon-minus:before {
-	content: "\e90a";
+.icon-share:before {
+	content: "\e913";
 }
-.icon-plus:before {
-	content: "\e90b";
+.icon-question-mark:before {
+	content: "\e912";
 }
-.icon-play:before {
-	content: "\e909";
-}
-.icon-arrow-left:before {
+.icon-arrow:before {
 	content: "\e900";
 }
-.icon-arrow-right:before {
+.icon-camera:before {
 	content: "\e901";
 }
-.icon-arrow-short:before {
+.icon-check:before {
 	content: "\e902";
 }
-.icon-envelope:before {
+.icon-check-circle:before {
 	content: "\e903";
 }
-.icon-envelope-white:before {
+.icon-close:before {
 	content: "\e904";
 }
-.icon-telegram:before {
+.icon-compare:before {
 	content: "\e905";
 }
-.icon-vk:before {
+.icon-download:before {
 	content: "\e906";
 }
-.icon-whatsapp:before {
+.icon-edit:before {
 	content: "\e907";
 }
-.icon-youtube:before {
+.icon-favorite:before {
 	content: "\e908";
+}
+.icon-map:before {
+	content: "\e909";
+}
+.icon-marker:before {
+	content: "\e90a";
+}
+.icon-phone:before {
+	content: "\e90b";
+}
+.icon-question:before {
+	content: "\e90c";
+}
+.icon-search:before {
+	content: "\e90d";
+}
+.icon-telegram:before {
+	content: "\e90e";
+}
+.icon-vk:before {
+	content: "\e90f";
+}
+.icon-whatsapp:before {
+	content: "\e910";
+}
+.icon-youtube:before {
+	content: "\e911";
 }

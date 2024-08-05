@@ -6,17 +6,12 @@
 	z-index: 6;
 	padding: 16px 0;
 	@media (min-width: $md0) {
-		padding: 32px 0;
+		padding: 50px 0;
 	}
 	// .header__body
 	&__body {
-		gap: 12px;
-		@media (min-width: $md0) {
-			gap: 24px;
-		}
-		@media (min-width: $md-xxl) {
-			gap: 42px;
-		}
+		background: #fff;
+		padding: 14px 20px;
 	}
 	// .header__logo
 	&__logo {
@@ -25,22 +20,124 @@
 		display: flex;
 		align-items: center;
 		flex-shrink: 0;
-		padding: 13px 15px;
-		@media (min-width: $md0) {
-			padding: 19px 20px;
-		}
+
 		& img {
 			max-width: 150px;
 			@media (min-width: $md0) {
-				max-width: 210px;
+				max-width: 216px;
 			}
-		}
-		@media (min-width: $md-xxl) {
-			padding: 19px 34px;
 		}
 	}
 	// .header__menu
 	&__menu {
+	}
+	// .header__whatsapp
+	&__whatsapp {
+		margin-right: 53px;
+		border-radius: 3px;
+		background: #dbdbdb;
+		padding: 7px 12px;
+		gap: 10px;
+		position: relative;
+		&::before {
+			content: "";
+			position: absolute;
+			top: -5px;
+			right: -5px;
+			width: 8px;
+			height: 8px;
+			border-radius: 5%;
+			background: #4ad504;
+			border-radius: 50%;
+			box-shadow: 0 0 0 5px #fff;
+		}
+		transition: background-color 0.3s ease 0s;
+		@media (any-hover: hover) {
+			&:hover {
+				background: darken($color: #dbdbdb, $amount: 10);
+				color: $text;
+			}
+		}
+	}
+	// .header__whatsapp-icon
+	&__whatsapp-icon {
+	}
+	// .header__callback
+	&__callback {
+		margin-right: 30px;
+	}
+	// .header__callback-btn
+	&__callback-btn {
+		border-left: 1px solid #dbdbdb;
+		border-right: 1px solid #dbdbdb;
+		padding: 15px 30px;
+		gap: 128px;
+		color: $accent;
+		font-size: 16px;
+		font-weight: 700;
+		letter-spacing: 1.6px;
+		text-transform: uppercase;
+		&::before {
+			order: 1;
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				color: darken($color: $accent, $amount: 10);
+			}
+		}
+	}
+	// .header__callback-list
+	&__callback-list {
+	}
+	// .header__callback-item
+	&__callback-item {
+	}
+	// .header__callback-link
+	&__callback-link {
+	}
+	// .header__callback-btn
+	&__callback-btn {
+	}
+	// .header__contacts
+	&__contacts {
+		border-left: 1px solid #dbdbdb;
+		border-right: 1px solid #dbdbdb;
+	}
+	// .header__contacts-block
+	&__contacts-block {
+		padding-inline: 30px;
+		gap: 46px;
+		&:not(:last-child) {
+			margin-bottom: 12px;
+			padding-bottom: 12px;
+			border-bottom: 1px solid #dbdbdb;
+		}
+	}
+	// .header__contacts-link
+	&__contacts-link {
+		transition: color 0.3s ease 0s;
+		font-weight: 700;
+		letter-spacing: 1.6px;
+		text-transform: uppercase;
+	}
+	// .header__contacts-city
+	&__contacts-city {
+		transition: color 0.3s ease 0s;
+		@media (any-hover: hover) {
+			&:hover {
+				color: #999;
+			}
+		}
+	}
+	// .header__actions
+	&__actions {
+		margin-left: 40px;
+		gap: 20px;
+	}
+	// .header__action
+	&__action {
+		font-size: 22px;
+		transition: color 0.3s ease 0s;
 	}
 	// .header__menu-btn
 	&__menu-btn {
@@ -93,26 +190,22 @@
 		@media (min-width: $md3) {
 			background: #fff;
 			flex: 1 1 auto;
+
 			align-self: stretch;
-			padding: 15px 20px;
-		}
-		@media (min-width: $md-xxl) {
-			padding: 23.5px 40px;
 		}
 	}
 	// .menu__list
 	&__list {
 		position: relative;
-		font-size: 20px;
+		font-weight: 700;
+		letter-spacing: 1.6px;
 		gap: 24px;
-
+		text-transform: uppercase;
+		justify-content: center;
 		@media (min-width: $md3) {
 			gap: 12px;
-			font-size: 15px;
 		}
-		@media (min-width: $md0) {
-			font-size: 16px;
-		}
+
 		@media (min-width: $md-xxl) {
 			gap: 24px;
 		}

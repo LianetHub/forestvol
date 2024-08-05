@@ -252,31 +252,86 @@ textarea.form-control {
 // <BUTTONS (a.btn+tab)>==============================
 
 .btn {
+	position: relative;
+	z-index: 1;
 	display: inline-flex;
+	overflow: hidden;
 	text-align: center;
-	justify-content: center;
+	justify-content: space-between;
 	align-items: center;
 	font-weight: 700;
-	padding: 15px 24px;
-	font-size: 14px;
-	@media (min-width: $md0) {
-		padding: 15px 32px 17px 32px;
-		font-size: 16px;
-	}
-	@media (min-width: $md-xxl) {
-		padding: 17px 48px 19px 48px;
-	}
-	border-radius: 30px;
+	font-size: 20px;
+	font-weight: 700;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	border-radius: 50px;
+	padding: 22px 80px 22px 40px;
 	line-height: normal;
+	width: 100%;
+	max-width: 455px;
+	&__icon {
+		position: absolute;
+		top: 5px;
+		right: 5px;
+		bottom: 5px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		aspect-ratio: 1;
+		border-radius: 50%;
 
+		z-index: -1;
+		&::after {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			border-radius: 50%;
+			z-index: -1;
+			transition: transform 0.3s ease-in-out 0s;
+		}
+	}
+
+	&:hover {
+		.btn__icon {
+			&::after {
+				transform: scale(15);
+			}
+		}
+	}
 	&.btn-primary {
-		background: $accent;
-		border-color: $accent;
-		color: rgba($color: #fff, $alpha: 0.8);
+		background: #fff;
+		border-color: $text;
+		color: $text;
+		.btn__icon {
+			&::after {
+				background: $accent;
+			}
+		}
 		&:hover {
-			background: darken($color: $accent, $amount: 10);
-			border-color: darken($color: $accent, $amount: 10);
-			color: #fff;
+			border-color: transparent;
+		}
+		&:focus {
+			box-shadow: 0 0 0 0.2rem rgba($color: $accent, $alpha: 0.5);
+		}
+		&:not(:disabled):not(.disabled):active {
+			background-color: darken($color: $accent, $amount: 15);
+			border-color: darken($color: $accent, $amount: 15);
+		}
+	}
+	&.btn-white {
+		background: transparent;
+		border-color: #fff;
+		color: #fff;
+		.btn__icon {
+			&::after {
+				background: $accent;
+			}
+		}
+		&:hover {
+			border-color: transparent;
 		}
 		&:focus {
 			box-shadow: 0 0 0 0.2rem rgba($color: $accent, $alpha: 0.5);
@@ -287,14 +342,18 @@ textarea.form-control {
 		}
 	}
 	&.btn-secondary {
-		background: #fff;
-		color: $accent;
+		background: $accent;
 		border-color: $accent;
-		&:hover {
-			background: $accent;
-			color: #fff;
-		}
+		color: #fff;
 
+		& .btn__icon {
+			&::after {
+				background: #242424;
+			}
+		}
+		&:hover {
+			border-color: $accent;
+		}
 		&:focus {
 			box-shadow: 0 0 0 0.2rem rgba($color: $accent, $alpha: 0.5);
 		}
@@ -305,8 +364,5 @@ textarea.form-control {
 				color: inherit;
 			}
 		}
-	}
-	&.btn-sm {
-		padding: 13px 30px;
 	}
 }

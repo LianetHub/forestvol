@@ -1,7 +1,6 @@
 "use strict";
 
 
-
 $(function () {
 
 
@@ -70,50 +69,17 @@ $(function () {
         let $target = $(e.target);
 
 
+
         if ($target.hasClass('icon-menu')) {
             $(".header").toggleClass("open-menu");
             $("body").toggleClass("lock-menu");
         }
+
         if ($target.is('.menu')) {
             $(".header").removeClass("open-menu");
             $("body").removeClass("lock-menu");
         }
 
-        // accordion
-        if ($target[0].closest('.consult__item-btn')) {
-            $target.closest('.consult__item-btn').toggleClass('active')
-            $target.closest('.consult__item-btn').next().slideToggle();
-        }
-
-        // details btn
-        if ($target.is('.energo__detail-btn')) {
-
-            let $currentAction = $target;
-            let $currentItem = $target.parent();
-            let $currentDesc = $target.next();
-
-            if ($target.hasClass('active')) {
-                $currentAction.removeClass('active');
-                $currentItem.removeClass('active');
-                $currentDesc.fadeOut();
-            } else {
-
-                $('.energo__detail-btn').removeClass('active');
-                $('.energo__detail-item').removeClass('active');
-                $('.energo__detail-desc').fadeOut();
-
-
-                $currentAction.addClass('active');
-                $currentItem.addClass('active');
-                $currentDesc.fadeIn();
-            }
-        }
-
-        // details tabs
-        if ($target.is('.energo__tab')) {
-            $target.addClass('active').siblings().removeClass('active');
-            $('.energo__block').eq($target.index()).addClass('active').siblings().removeClass('active');
-        }
 
         if ($target.is('.menu__link') && $('body').hasClass('_touch')) {
 
@@ -137,6 +103,37 @@ $(function () {
             }
 
         }
+
+
+        // examples tabs
+        if ($target.is('.examples__btn')) {
+            $target.addClass('active').siblings().removeClass('active');
+            $('.examples__image').eq($target.index()).addClass('active fade').siblings().removeClass('active fade')
+        }
+
+        //  visual block ++
+        if ($target.is('.visual__info-btn')) {
+            let $currentAction = $target.parent(".visual__info-action");
+            let $currentList = $target.next(".visual__info-list");
+
+            if ($target.hasClass('active')) {
+                $currentAction.removeClass('active');
+                $target.removeClass('active');
+                $currentList.slideUp();
+            } else {
+
+                $('.visual__info-action').removeClass('active');
+                $('.visual__info-btn').removeClass('active');
+                $('.visual__info-list').slideUp();
+
+
+                $currentAction.addClass('active');
+                $target.addClass('active');
+                $currentList.slideDown();
+            }
+        }
+
+
 
     });
 
@@ -167,21 +164,13 @@ $(function () {
 
     // sliders
 
-    if ($('.promo__slider').length > 0) {
-        $('.promo__slider').slick({
-            arrows: false,
-            infinite: true,
-            autoplay: true,
-            autoplaySpeed: 6000,
-            fade: true,
-            cssEase: 'linear'
-        });
-    }
+
 
     if ($('.gallery__slider').length > 0) {
         let gallerySlider = $('.gallery__slider').slick({
             infinite: false,
             variableWidth: true,
+            arrows: false,
             responsive: [
                 {
                     breakpoint: 576,
@@ -193,13 +182,66 @@ $(function () {
             ]
         });
 
-        gallerySlider.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+    }
 
-            if (nextSlide > 0) {
-                $('.gallery__offer').addClass('fade-tablet')
-            } else {
-                $('.gallery__offer').removeClass('fade-tablet')
+    if ($('.projects__slider').length > 0) {
+        let projects = $('.projects__slider').slick({
+            infinite: false,
+            variableWidth: true,
+            arrows: false,
+        });
+
+    }
+
+    if ($('.projects__item-slider').length > 0) {
+
+        $('.projects__item-slider').each(function () {
+
+            $(this).on('init', function (e) {
+                let $slider = $(e.target)
+                let slides = $slider.find('.projects__item-slide');
+
+                if (slides.length > 0) {
+                    getSlickMouseNavbar($slider, slides.length)
+                }
+
+            })
+
+            $(this).slick({
+                infinite: false,
+                variableWidth: true,
+                arrows: false,
+                dots: true,
+
+                swipe: false
+            });
+
+
+            function getSlickMouseNavbar($slider, quantity) {
+
+                $slider.on('mousemove', function (event) {
+
+                    if (event.target.closest('.slick-dots')) {
+                        return;
+                    }
+
+
+
+                    let sliderWidth = $slider.width();
+                    let mouseX = event.pageX - $slider.offset().left;
+
+                    let areaWidth = sliderWidth / quantity;
+                    let index = Math.floor(mouseX / areaWidth);
+
+                    $slider.slick('slickSetOption', 'speed', 0, true);
+                    $slider.slick('slickGoTo', index);
+
+                    setTimeout(function () {
+                        $slider.slick('slickSetOption', 'speed', 300, true);
+                    }, 0);
+                });
             }
+
         })
 
     }
@@ -215,16 +257,16 @@ $(function () {
         return headerHeight;
     }
 
-    // window.addEventListener('resize', () => getHeaderHeight());
+    window.addEventListener('resize', () => getHeaderHeight());
 
 
-    // $(window).on('scroll', function () {
-    //     if ($(this).scrollTop() > getHeaderHeight()) {
-    //         $('header').addClass('scroll');
-    //     } else {
-    //         $('header').removeClass('scroll');
-    //     }
-    // });
+    $(window).on('scroll', function () {
+        if ($(this).scrollTop() > getHeaderHeight()) {
+            $('header').addClass('scroll');
+        } else {
+            $('header').removeClass('scroll');
+        }
+    });
 
 
 
