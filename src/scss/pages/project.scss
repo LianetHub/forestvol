@@ -681,7 +681,9 @@
 		line-height: 100%;
 	}
 	&__btn {
-		max-width: 605px;
+		&.btn {
+			max-width: 605px;
+		}
 	}
 	// .visual__info-actions
 	&__info-actions {

@@ -134,7 +134,23 @@
 		@media (min-width: $md3) {
 			margin-top: $header;
 		}
-		& > img {
+		& picture {
+			& > img,
+			& > source {
+				min-height: 360px;
+				@media (min-width: $md4) {
+					height: 480px;
+				}
+				@media (min-width: $md3) {
+					height: 640px;
+				}
+				@media (min-width: $md0) {
+					height: 940px;
+				}
+			}
+		}
+		& > img,
+		& > source {
 			min-height: 360px;
 			@media (min-width: $md4) {
 				height: 480px;
@@ -167,9 +183,6 @@
 		align-items: center;
 		gap: 30px;
 		flex-shrink: 0;
-		& img {
-			max-width: 22px;
-		}
 	}
 	// .gallery__slide-text
 	&__slide-text {

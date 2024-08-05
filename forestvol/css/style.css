@@ -7343,9 +7343,9 @@ input[type=number] {
 }
 
 @font-face {
-  font-family: "Gilroy";
+  font-family: "icons";
   font-display: swap;
-  src: url("../fonts/Gilroy-Regular.woff2") format("woff2"), url("../fonts/Gilroy-Regular.woff") format("woff");
+  src: url("../fonts/icons.woff2") format("woff2"), url("../fonts/icons.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
@@ -7359,9 +7359,9 @@ input[type=number] {
 }
 
 @font-face {
-  font-family: "icons";
+  font-family: "Gilroy";
   font-display: swap;
-  src: url("../fonts/icons.woff2") format("woff2"), url("../fonts/icons.woff") format("woff");
+  src: url("../fonts/Gilroy-Regular.woff2") format("woff2"), url("../fonts/Gilroy-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
@@ -8825,7 +8825,13 @@ textarea.form-control {
       flex-shrink: 0;
 }
 
-.gallery__slide > img {
+.gallery__slide picture > img,
+.gallery__slide picture > source {
+  min-height: 360px;
+}
+
+.gallery__slide > img,
+.gallery__slide > source {
   min-height: 360px;
 }
 
@@ -8855,10 +8861,6 @@ textarea.form-control {
   gap: 30px;
   -ms-flex-negative: 0;
       flex-shrink: 0;
-}
-
-.gallery__slide-label img {
-  max-width: 22px;
 }
 
 .projects {
@@ -10012,7 +10014,7 @@ textarea.form-control {
   line-height: 100%;
 }
 
-.visual__btn {
+.visual__btn.btn {
   max-width: 605px;
 }
 
@@ -11766,7 +11768,13 @@ textarea.form-control {
     margin: 0 -20px;
   }
 
-  .gallery__slide > img {
+  .gallery__slide picture > img,
+  .gallery__slide picture > source {
+    height: 480px;
+  }
+
+  .gallery__slide > img,
+  .gallery__slide > source {
     height: 480px;
   }
 
@@ -13125,7 +13133,13 @@ textarea.form-control {
     margin-top: var(--header-height, 195px);
   }
 
-  .gallery__slide > img {
+  .gallery__slide picture > img,
+  .gallery__slide picture > source {
+    height: 640px;
+  }
+
+  .gallery__slide > img,
+  .gallery__slide > source {
     height: 640px;
   }
 
@@ -16116,7 +16130,13 @@ textarea.form-control {
     margin-top: 280px;
   }
 
-  .gallery__slide > img {
+  .gallery__slide picture > img,
+  .gallery__slide picture > source {
+    height: 940px;
+  }
+
+  .gallery__slide > img,
+  .gallery__slide > source {
     height: 940px;
   }
 
