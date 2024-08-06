@@ -182,7 +182,7 @@ textarea.form-control {
 	&:hover {
 		.btn__icon {
 			&::after {
-				transform: scale(15);
+				transform: scale(20);
 			}
 		}
 	}
@@ -274,5 +274,8 @@ textarea.form-control {
 				color: inherit;
 			}
 		}
+	}
+	&.btn-sm {
+		font-size: 14px;
 	}
 }

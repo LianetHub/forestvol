@@ -5,13 +5,110 @@
                 <img src="@img/logo.png" alt="logo">
             </a>
             <div class="header__menu menu">
+
                 <nav class="menu__body">
+                    <a href="/" class="menu__logo d-lg-none">
+                        <img src="@img/logo.png" alt="logo">
+                    </a>
                     <ul class="menu__list d-flex flex-lg-row flex-column">
-                        <li class="menu__item"><a href="" class="menu__link">Проекты</a></li>
-                        <li class="menu__item"><a href="" class="menu__link">Компания</a></li>
-                        <li class="menu__item"><a href="" class="menu__link">Готовые дома</a></li>
-                        <li class="menu__item"><a href="" class="menu__link color-gray">Еще <span>...</span></a></li>
+                        <li class="menu__item">
+                            <a href="" class="menu__link">Проекты</a>
+                            <div class="submenu submenu-lg ">
+                                <ul class="submenu__menu submenu__menu-grid">
+                                    <li class="submenu__menu-item">
+                                        <a href="" class="submenu__menu-link">
+                                            До 110 м²
+                                        </a>
+                                    </li>
+                                    <li class="submenu__menu-item">
+                                        <a href="" class="submenu__menu-link">
+                                            до 3 млн ₽
+                                        </a>
+                                    </li>
+                                    <li class="submenu__menu-item">
+                                        <a href="" class="submenu__menu-link">
+                                            Одноэтажные
+                                        </a>
+                                    </li>
+                                    <li class="submenu__menu-item">
+                                        <a href="" class="submenu__menu-link">
+                                            100-170 м²
+                                        </a>
+                                    </li>
+                                    <li class="submenu__menu-item">
+                                        <a href="" class="submenu__menu-link">
+                                            3-5 млн ₽
+                                        </a>
+                                    </li>
+                                    <li class="submenu__menu-item">
+                                        <a href="" class="submenu__menu-link">
+                                            Двухэтажные
+                                        </a>
+                                    </li>
+                                    <li class="submenu__menu-item">
+                                        <a href="" class="submenu__menu-link">
+                                            Свыше 170 м²
+                                        </a>
+                                    </li>
+                                    <li class="submenu__menu-item">
+                                        <a href="" class="submenu__menu-link">
+                                            Свыше 4,5 млн ₽
+                                        </a>
+                                    </li>
+                                    <li class="submenu__menu-item">
+                                        <a href="" class="submenu__menu-link">
+                                            Акции
+                                        </a>
+                                    </li>
+                                </ul>
+                                <a href="#quiz" data-fancybox class="btn btn-secondary">
+                                    РАссчитать стоимость
+                                    <span class="btn__icon icon-check"></span>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="menu__item">
+                            <a href="" class="menu__link">Компания</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="" class="menu__link">Готовые дома</a>
+                        </li>
+                        <li class="menu__item position-relative">
+                            <a href="" class="menu__link color-gray d-lg-block d-none">
+                                Еще ...
+                            </a>
+                            <div class="submenu">
+                                <ul class="submenu__menu">
+                                    <li class="submenu__menu-item">
+                                        <a href="" class="submenu__menu-link">
+                                            География строительства
+                                        </a>
+                                    </li>
+                                    <li class="submenu__menu-item">
+                                        <a href="" class="submenu__menu-link">
+                                            Галерея
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
                     </ul>
+                    <div class="d-lg-none mt-5">
+                        <div class="header__callback-content d-flex flex-sm-wrap justify-content-sm-between flex-sm-row flex-column">
+                            <div class="header__callback-main">
+                                <a href="tel:+74992888743" class="header__callback-link">+7 (499) 288 87 43</a>
+                                <div class="header__callback-hint">Контакты</div>
+                            </div>
+                            <div class="header__callback-socials d-flex flex-column">
+                                <a href="" class="header__callback-social icon-telegram">Телеграм</a>
+                                <a href="" class="header__callback-social icon-vk">Вконтакте</a>
+                            </div>
+                            <a href="#callback" data-fancybox class="mt-3 btn btn-sm btn-secondary">
+                                Оставить заявку
+                                <span class="btn__icon icon-arrow"></span>
+                            </a>
+                        </div>
+                    </div>
                 </nav>
             </div>
             <a href="" class="header__whatsapp d-xl-flex d-none align-items-center">
@@ -20,7 +117,7 @@
                 </span>
                 WhatsApp
             </a>
-            <div class="header__callback mt-sm-0 mt-5" data-da=".menu__body, 575.98, last">
+            <div class="header__callback mt-sm-0 mt-5 d-sm-block d-none">
                 <span role="button" class="header__callback-btn icon-marker d-sm-flex d-none align-items-center justify-content-between">
                     Связаться
                 </span>

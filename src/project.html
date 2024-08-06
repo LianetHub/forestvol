@@ -51,13 +51,15 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="project-card__main rounded">
+                        <div class="project-card__main rounded" style="padding-bottom: 56%;">
                             <img src="@img/project.jpg" class="cover-image rounded" alt="Проект">
-                            <div class="project-card__actions">
-                                <a href="" class="project-card__action icon-favorite"></a>
-                                <a href="" class="project-card__action icon-compare"></a>
-                                <a href="" class="project-card__action icon-share"></a>
-                                <a href="" class="project-card__action icon-download"></a>
+                            <div class="project-card__side">
+                                <div class="project-card__actions">
+                                    <a href="" class="project-card__action icon-favorite"></a>
+                                    <a href="" class="project-card__action icon-compare"></a>
+                                    <a href="" class="project-card__action icon-share"></a>
+                                    <a href="" class="project-card__action icon-download"></a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -158,12 +160,14 @@
                             <div class="row align-items-center">
                                 <div class="col-lg-6">
                                     <h2 class="banner__title title-xl color-white">
-                                        Посмотрите <br> интерьер дома <span class="color-yellow">в&nbsp;формате 3D тура</span>
+                                        Посмотрите <br>
+                                        интерьер дома <br class="d-lg-none">
+                                        <span class="color-yellow">в&nbsp;формате 3D тура</span>
                                     </h2>
                                 </div>
                                 <div class="col-lg-6 d-flex">
                                     <a href="" class="banner__btn btn btn-secondary ml-lg-auto">
-                                        Перейти а конфигуратор
+                                        Перейти в конфигуратор
                                         <span class="btn__icon icon-arrow"></span>
                                     </a>
                                 </div>
@@ -334,15 +338,15 @@
                 </section>
                 <section class="examples">
                     <div class="examples__images">
-                        <div class="examples__image active">
+                        <a href="@img/example.jpg" data-fancybox class="examples__image active">
                             <img src="@img/example.jpg" class="cover-image" alt="Гостиная">
-                        </div>
-                        <div class="examples__image">
+                        </a>
+                        <a href="@img/example.jpg" data-fancybox class="examples__image">
                             <img src="@img/example.jpg" class="cover-image" alt="Кухня">
-                        </div>
-                        <div class="examples__image">
+                        </a>
+                        <a href="@img/example.jpg" data-fancybox class="examples__image">
                             <img src="@img/example.jpg" class="cover-image" alt="спальня">
-                        </div>
+                        </a>
                     </div>
                     <div class="examples__controls">
                         <div class="container">
@@ -416,7 +420,7 @@
                         </div>
                     </div>
                 </section>
-                <section class="materials d-md-block d-none">
+                <section class="materials">
                     <div class="container">
                         <div class="row align-items-center">
                             <div class="col-xxl-4">
@@ -425,31 +429,31 @@
                                     выполняют профессиональные бригады и проектировщики
                                 </div>
                                 <ol class="materials__list">
-                                    <li class="materials__item">
+                                    <li data-fancybox data-src="#floors" class="materials__item">
                                         <div class="materials__item-name">Полы</div>
                                         <div class="materials__item-image">
                                             <img src="@img/materials/01.png" alt="Визуал">
                                         </div>
                                     </li>
-                                    <li class="materials__item">
+                                    <li data-fancybox data-src="#walls" class="materials__item">
                                         <div class="materials__item-name">Наружные стены</div>
                                         <div class="materials__item-image">
                                             <img src="@img/materials/02.png" alt="Визуал">
                                         </div>
                                     </li>
-                                    <li class="materials__item">
+                                    <li data-fancybox data-src="#partitions" class="materials__item">
                                         <div class="materials__item-name">Перегородки</div>
                                         <div class="materials__item-image">
                                             <img src="@img/materials/03.png" alt="Визуал">
                                         </div>
                                     </li>
-                                    <li class="materials__item">
+                                    <li data-fancybox data-src="#overlaps" class="materials__item">
                                         <div class="materials__item-name">Перекрытия</div>
                                         <div class="materials__item-image">
                                             <img src="@img/materials/04.png" alt="Визуал">
                                         </div>
                                     </li>
-                                    <li class="materials__item">
+                                    <li data-fancybox data-src="#roofs" class="materials__item">
                                         <div class="materials__item-name">Кровля</div>
                                         <div class="materials__item-image">
                                             <img src="@img/materials/05.png" alt="Визуал">
@@ -457,22 +461,22 @@
                                     </li>
                                 </ol>
                             </div>
-                            <div class="col-xxl-8">
+                            <div class="col-xxl-8 d-lg-block d-none">
                                 <div class="materials__image">
                                     <img src="@img/materials/visual.png" alt="visaul">
                                     <div class="materials__points">
-                                        <div class="materials__point">01</div>
-                                        <div class="materials__point">02</div>
-                                        <div class="materials__point">03</div>
-                                        <div class="materials__point">04</div>
-                                        <div class="materials__point">05</div>
+                                        <a href="#floors" data-fancybox class="materials__point">01</a>
+                                        <a href="#walls" data-fancybox class="materials__point">02</a>
+                                        <a href="#partitions" data-fancybox class="materials__point">03</a>
+                                        <a href="#overlaps" data-fancybox class="materials__point">04</a>
+                                        <a href="#roofs" data-fancybox class="materials__point">05</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
-                <section class="completed-projects ">
+                <section class="completed-projects">
                     <div class="container">
                         <div class="row">
                             <div class="col-md-6 col-12">
@@ -558,9 +562,18 @@
                         </div>
                     </div>
                 </section>
-                <section class="visual d-lg-block d-none">
+                <section class="visual">
                     <div class="visual__image">
                         <img src="@img/visual.jpg" class="cover-image" alt="Фото проекта">
+                        <div class="visual__body">
+                            <div class="container-xxl">
+                                <p class="visual__text">На основе примера проекта вы можете выбрать цвет для вашего будущего дома. После завершения вы сможете скачать файл с выбранной окраской и приложить его к заказу. </p>
+                                <a href="" class="visual__btn btn btn-white">
+                                    Скачать выбранную окраску fullhd
+                                    <span class="btn__icon icon-download"></span>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                     <div class="visual__info-actions">
                         <div class="visual__info-action">
@@ -634,23 +647,17 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="visual__body">
-                        <div class="container-xxl">
-                            <p class="visual__text">На основе примера проекта вы можете выбрать цвет для вашего будущего дома. После завершения вы сможете скачать файл с выбранной окраской и приложить его к заказу. </p>
-                            <a href="" class="visual__btn btn btn-white">
-                                Скачать выбранную окраску fullhd
-                                <span class="btn__icon icon-download"></span>
-                            </a>
-                        </div>
-                    </div>
+
                 </section>
                 @@include('./html/_projects.html', {
                 "title": "Возможно вам <br> понравятся",
                 "desc": "другие проекты домов"
                 })
-
                 @@include('./html/_individual.html')
-
+                <a href="" class="choise-btn btn btn-primary">
+                    Выбрать этот проект от 2,7 млн
+                    <span class="btn__icon icon-arrow"></span>
+                </a>
             </main>
             @@include('html/_footer.html', {})
         </div>

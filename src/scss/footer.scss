@@ -5,6 +5,12 @@
 	@media (min-width: $md5) {
 		padding: 80px 0 66px;
 	}
+	@media (min-width: $md2) {
+		position: fixed;
+		bottom: 0;
+		z-index: 2;
+		width: 100%;
+	}
 	// .footer__header
 	&__header {
 		gap: 16px;
@@ -18,7 +24,7 @@
 		&.btn.btn-secondary {
 			width: 100%;
 			&:hover {
-				border-color: $yellow;
+				border-color: $accent;
 			}
 		}
 	}

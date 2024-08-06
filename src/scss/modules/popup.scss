@@ -31,6 +31,9 @@
 		max-width: 1420px;
 		padding: 60px;
 	}
+	&.popup-md {
+		max-width: 1180px;
+	}
 	.fancybox-button {
 		&[data-fancybox-close] {
 			top: 10px;

@@ -1,4 +1,5 @@
 @import "modules/config";
+@import "modules/quiz";
 
 .font-weight-semibold {
 	font-weight: 600;
@@ -112,6 +113,22 @@
 			color: $accent;
 		}
 	}
+}
+
+.choise-btn {
+	&.btn {
+		position: fixed;
+		max-width: 520px;
+	}
+	bottom: 16px;
+	left: 16px;
+	right: 16px;
+	@media (min-width: $md5) {
+		bottom: 32px;
+		right: 32px;
+		left: auto;
+	}
+	z-index: 3;
 }
 
 .more-link {

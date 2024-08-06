@@ -156,9 +156,59 @@ $(function () {
             $.fancybox.getInstance().close()
         }
 
+        //  quiz
+        if ($target.is('.quiz__controls-next')) {
+            updateQuiz()
+        }
+
+        if ($target.is('.quiz__controls-prev')) {
+            updateQuiz('prev')
+        }
+
+        if ($target.is('.quiz__controls-submit')) {
+            $('.quiz__main').addClass('hidden');
+            $('.quiz__form').removeClass('hidden');
+        }
+
 
     });
 
+
+    function updateQuiz(direction = 'next') {
+
+        let currentQuestion = $('.quiz__progressbar-current').text();
+        let totalQuestions = $('.quiz__progressbar-total').text();
+        let $progressBlock = $('.quiz__progressbar-progress');
+        let $prevBtn = $('.quiz__controls-prev');
+        let $nextBtn = $('.quiz__controls-next');
+        let $submitBtn = $('.quiz__controls-submit');
+
+        if (direction == 'next') {
+            +currentQuestion++;
+            $('.quiz__progressbar-current').text(currentQuestion);
+            $('.quiz__block.active').removeClass('active').next().addClass('active');
+            $prevBtn.removeClass('disabled');
+
+            if (currentQuestion == totalQuestions) {
+
+                $submitBtn.removeClass('hidden');
+                $nextBtn.addClass('hidden')
+            }
+        }
+        if (direction == 'prev') {
+            +currentQuestion--;
+            $('.quiz__progressbar-current').text(currentQuestion);
+            $('.quiz__block.active').removeClass('active').prev().addClass('active');
+            $nextBtn.removeClass('hidden');
+            $submitBtn.addClass('hidden');
+            if (currentQuestion === 1) {
+                $prevBtn.addClass('disabled');
+            }
+        }
+
+        $progressBlock.css('--progress', ((currentQuestion / totalQuestions) * 100) + "%");
+
+    }
 
 
     if ($('[name="config"]').length > 0) {
@@ -205,11 +255,7 @@ $(function () {
 
 
 
-
     // sliders
-
-
-
 
     if ($('.completed-projects__slider').length > 0) {
         $('.completed-projects__slider').slick({
@@ -324,92 +370,91 @@ $(function () {
 
 
     // animation
-    // gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollTrigger);
 
-    // let mainTl = gsap.timeline({
-    //     scrollTrigger: {
-    //         trigger: ".promo",
-    //         start: "top top",
-    //         end: "+=65%",
-    //         scrub: true,
-    //         pin: true,
-    //         anticipatePin: 1,
-    //         onUpdate: function (self) {
-    //             self.animation.timeScale(self.progress);
-    //         },
-    //     }
-    // });
+    let mainTl = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".promo",
+            start: "top top",
+            end: "+=65%",
+            scrub: true,
+            pin: true,
+            anticipatePin: 1,
+            onUpdate: function (self) {
+                self.animation.timeScale(self.progress);
+            },
+        }
+    });
 
-    // mainTl
-    //     .to('.promo__image', {
-    //         marginLeft: "-25%",
-    //         marginRight: "-25%",
-    //         stagger: 0
-    //     })
-    //     .to('.promo__main', {
-    //         y: "100%",
-    //         opacity: 0,
-    //         stagger: 0
-    //     }, 0)
-    //     .to('.promo__overlay', {
-    //         opacity: 0,
-    //         stagger: 0
-    //     }, 0);
+    mainTl
+        .to('.promo__image', {
+            marginLeft: "-25%",
+            marginRight: "-25%",
+            stagger: 0
+        })
+        .to('.promo__main', {
+            y: "100%",
+            opacity: 0,
+            stagger: 0
+        }, 0)
+        .to('.promo__overlay', {
+            opacity: 0,
+            stagger: 0
+        }, 0);
 
-    // function initGallerySlider() {
-    //     const slides = document.querySelectorAll('.gallery__slide');
-    //     const totalSlides = slides.length;
+    function initGallerySlider() {
+        const slides = document.querySelectorAll('.gallery__slide');
+        const totalSlides = slides.length;
 
-    //     gsap.to(slides, {
-    //         xPercent: -100 * (totalSlides - 1),
-    //         ease: "none",
-    //         scrollTrigger: {
-    //             trigger: ".gallery__slider",
-    //             pin: true,
-    //             scrub: 1,
-    //             snap: 1 / (totalSlides - 1),
-    //             end: () => "+=" + document.querySelector(".gallery__slider").offsetWidth
-    //         }
-    //     });
-    // }
+        gsap.to(slides, {
+            xPercent: -100 * (totalSlides - 1),
+            ease: "none",
+            scrollTrigger: {
+                trigger: ".gallery__slider",
+                pin: true,
+                scrub: 1,
+                snap: 1 / (totalSlides - 1),
+                end: () => "+=" + document.querySelector(".gallery__slider").offsetWidth
+            }
+        });
+    }
 
-    // function initProjectCardAnimation() {
-    //     gsap.to('.project-card__main img', {
-    //         yPercent: -15,
-    //         scrollTrigger: {
-    //             trigger: '.project-card',
-    //             start: 'top top',
-    //             end: 'bottom top',
-    //             scrub: true,
-    //         }
-    //     });
-    // }
+    function initProjectCardAnimation() {
+        gsap.to('.project-card__main img', {
+            yPercent: -15,
+            scrollTrigger: {
+                trigger: '.project-card',
+                start: 'top top',
+                end: 'bottom top',
+                scrub: true,
+            }
+        });
+    }
 
-    // function startAnimations() {
-    //     if (window.innerWidth > 992) {
-    //         if (document.querySelector('.promo')) {
-    //             mainTl.scrollTrigger.enable();
-    //         }
-    //         if (document.querySelector('.gallery__slider')) {
+    function startAnimations() {
+        if (window.innerWidth > 992) {
+            if ($('.promo').length > 0) {
+                mainTl.scrollTrigger.enable();
+            }
+            if ($('.gallery__slider').length > 0) {
+                initGallerySlider();
+            }
+            if ($('.project-card__main').length > 0) {
+                initProjectCardAnimation();
+            }
+        } else {
+            mainTl.scrollTrigger.disable();
 
-    //             initGallerySlider();
-    //         }
-    //         if (document.querySelector('.project-card__main')) {
-    //             initProjectCardAnimation();
-    //         }
-    //     } else {
-    //         mainTl.scrollTrigger.disable();
-
-    //     }
-    // }
-
+        }
+    }
 
 
-    // startAnimations();
 
-    // window.addEventListener('resize', function () {
-    //     startAnimations();
-    // });
+    startAnimations();
+
+    window.addEventListener('resize', function () {
+        startAnimations();
+    });
 
 
     // map
@@ -440,166 +485,6 @@ $(function () {
 
         });
     }
-
-
-
-
-
-
-    // move block on adaptive
-
-    function DynamicAdapt(type) {
-        this.type = type;
-    }
-
-    DynamicAdapt.prototype.init = function () {
-        const _this = this;
-        this.оbjects = [];
-        this.daClassname = "_dynamic_adapt_";
-        this.nodes = document.querySelectorAll("[data-da]");
-
-
-        for (let i = 0; i < this.nodes.length; i++) {
-            const node = this.nodes[i];
-            const data = node.dataset.da.trim();
-            const dataArray = data.split(",");
-            const оbject = {};
-            оbject.element = node;
-            оbject.parent = node.parentNode;
-            оbject.destination = document.querySelector(dataArray[0].trim());
-            оbject.breakpoint = dataArray[1] ? dataArray[1].trim() : "767";
-            оbject.place = dataArray[2] ? dataArray[2].trim() : "last";
-            оbject.index = this.indexInParent(оbject.parent, оbject.element);
-            this.оbjects.push(оbject);
-        }
-
-        this.arraySort(this.оbjects);
-
-
-        this.mediaQueries = Array.prototype.map.call(this.оbjects, function (item) {
-            return '(' + this.type + "-width: " + item.breakpoint + "px)," + item.breakpoint;
-        }, this);
-        this.mediaQueries = Array.prototype.filter.call(this.mediaQueries, function (item, index, self) {
-            return Array.prototype.indexOf.call(self, item) === index;
-        });
-
-
-        for (let i = 0; i < this.mediaQueries.length; i++) {
-            const media = this.mediaQueries[i];
-            const mediaSplit = String.prototype.split.call(media, ',');
-            const matchMedia = window.matchMedia(mediaSplit[0]);
-            const mediaBreakpoint = mediaSplit[1];
-
-
-            const оbjectsFilter = Array.prototype.filter.call(this.оbjects, function (item) {
-                return item.breakpoint === mediaBreakpoint;
-            });
-            matchMedia.addListener(function () {
-                _this.mediaHandler(matchMedia, оbjectsFilter);
-            });
-            this.mediaHandler(matchMedia, оbjectsFilter);
-        }
-    };
-
-    DynamicAdapt.prototype.mediaHandler = function (matchMedia, оbjects) {
-        if (matchMedia.matches) {
-            for (let i = 0; i < оbjects.length; i++) {
-                const оbject = оbjects[i];
-                оbject.index = this.indexInParent(оbject.parent, оbject.element);
-                this.moveTo(оbject.place, оbject.element, оbject.destination);
-            }
-        } else {
-            for (let i = 0; i < оbjects.length; i++) {
-                const оbject = оbjects[i];
-                if (оbject.element.classList.contains(this.daClassname)) {
-                    this.moveBack(оbject.parent, оbject.element, оbject.index);
-                }
-            }
-        }
-    };
-
-
-    DynamicAdapt.prototype.moveTo = function (place, element, destination) {
-        element.classList.add(this.daClassname);
-        if (place === 'last' || place >= destination.children.length) {
-            destination.insertAdjacentElement('beforeend', element);
-            return;
-        }
-        if (place === 'first') {
-            destination.insertAdjacentElement('afterbegin', element);
-            return;
-        }
-        destination.children[place].insertAdjacentElement('beforebegin', element);
-    }
-
-
-    DynamicAdapt.prototype.moveBack = function (parent, element, index) {
-        element.classList.remove(this.daClassname);
-        if (parent.children[index] !== undefined) {
-            parent.children[index].insertAdjacentElement('beforebegin', element);
-        } else {
-            parent.insertAdjacentElement('beforeend', element);
-        }
-    }
-
-
-    DynamicAdapt.prototype.indexInParent = function (parent, element) {
-        const array = Array.prototype.slice.call(parent.children);
-        return Array.prototype.indexOf.call(array, element);
-    };
-
-
-    DynamicAdapt.prototype.arraySort = function (arr) {
-        if (this.type === "min") {
-            Array.prototype.sort.call(arr, function (a, b) {
-                if (a.breakpoint === b.breakpoint) {
-                    if (a.place === b.place) {
-                        return 0;
-                    }
-
-                    if (a.place === "first" || b.place === "last") {
-                        return -1;
-                    }
-
-                    if (a.place === "last" || b.place === "first") {
-                        return 1;
-                    }
-
-                    return a.place - b.place;
-                }
-
-                return a.breakpoint - b.breakpoint;
-            });
-        } else {
-            Array.prototype.sort.call(arr, function (a, b) {
-                if (a.breakpoint === b.breakpoint) {
-                    if (a.place === b.place) {
-                        return 0;
-                    }
-
-                    if (a.place === "first" || b.place === "last") {
-                        return 1;
-                    }
-
-                    if (a.place === "last" || b.place === "first") {
-                        return -1;
-                    }
-
-                    return b.place - a.place;
-                }
-
-                return b.breakpoint - a.breakpoint;
-            });
-            return;
-        }
-    };
-
-    const da = new DynamicAdapt("max");
-    da.init();
-
-
-
-
 
 
 });

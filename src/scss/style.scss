@@ -6,8 +6,8 @@
 
 // ======================================МИКСИНЫ==============================================
 
-@import "../../node_modules/bootstrap/scss/bootstrap";
-@import "reset";
+// @import "../../node_modules/bootstrap/scss/bootstrap";
+// @import "reset";
 // ======================================ШРИФТЫ===============================================
 
 // &display=swap&subset=cyrillic-ext
@@ -93,6 +93,12 @@ body {
 .page {
 	flex: 1 1 auto;
 	overflow-x: clip;
+	@media (min-width: $md2) {
+		margin-bottom: 1260px;
+		position: relative;
+		z-index: 3;
+		background: #fff;
+	}
 }
 // =======================ОСНОВНОЙ БЛОК===================
 

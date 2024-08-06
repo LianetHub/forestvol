@@ -884,7 +884,7 @@
 	&__btn {
 		&.btn.btn-secondary {
 			&:hover {
-				border-color: $yellow;
+				border-color: $accent;
 			}
 		}
 	}
@@ -909,7 +909,7 @@
 		@media (min-width: $md3) {
 			position: sticky;
 			top: $header;
-			margin-bottom: 4.5rem;
+			margin-bottom: 96px;
 		}
 	}
 	&__bottom {
@@ -1039,6 +1039,10 @@
 		flex: 1 1 auto;
 		display: flex;
 		min-height: 100%;
+		& picture {
+			display: flex;
+			min-height: 100%;
+		}
 		& img {
 			height: auto;
 		}

@@ -46,19 +46,89 @@
                     </a>
                     <div class="header__menu menu">
                         <nav class="menu__body">
+                            <a href="/" class="menu__logo d-lg-none">
+                                <picture>
+                                    <source srcset="img/logo.webp" type="image/webp"><img src="img/logo.png" alt="logo">
+                                </picture>
+                            </a>
                             <ul class="menu__list d-flex flex-lg-row flex-column">
-                                <li class="menu__item"><a href="" class="menu__link">Проекты</a></li>
-                                <li class="menu__item"><a href="" class="menu__link">Компания</a></li>
-                                <li class="menu__item"><a href="" class="menu__link">Готовые дома</a></li>
-                                <li class="menu__item"><a href="" class="menu__link color-gray">Еще <span>...</span></a></li>
+                                <li class="menu__item">
+                                    <a href="" class="menu__link">Проекты</a>
+                                    <div class="submenu submenu-lg ">
+                                        <ul class="submenu__menu submenu__menu-grid">
+                                            <li class="submenu__menu-item">
+                                                <a href="" class="submenu__menu-link"> До 110 м² </a>
+                                            </li>
+                                            <li class="submenu__menu-item">
+                                                <a href="" class="submenu__menu-link"> до 3 млн ₽ </a>
+                                            </li>
+                                            <li class="submenu__menu-item">
+                                                <a href="" class="submenu__menu-link"> Одноэтажные </a>
+                                            </li>
+                                            <li class="submenu__menu-item">
+                                                <a href="" class="submenu__menu-link"> 100-170 м² </a>
+                                            </li>
+                                            <li class="submenu__menu-item">
+                                                <a href="" class="submenu__menu-link"> 3-5 млн ₽ </a>
+                                            </li>
+                                            <li class="submenu__menu-item">
+                                                <a href="" class="submenu__menu-link"> Двухэтажные </a>
+                                            </li>
+                                            <li class="submenu__menu-item">
+                                                <a href="" class="submenu__menu-link"> Свыше 170 м² </a>
+                                            </li>
+                                            <li class="submenu__menu-item">
+                                                <a href="" class="submenu__menu-link"> Свыше 4,5 млн ₽ </a>
+                                            </li>
+                                            <li class="submenu__menu-item">
+                                                <a href="" class="submenu__menu-link"> Акции </a>
+                                            </li>
+                                        </ul>
+                                        <a href="#quiz" data-fancybox class="btn btn-secondary"> РАссчитать стоимость <span class="btn__icon icon-check"></span>
+                                        </a>
+                                    </div>
+                                </li>
+                                <li class="menu__item">
+                                    <a href="" class="menu__link">Компания</a>
+                                </li>
+                                <li class="menu__item">
+                                    <a href="" class="menu__link">Готовые дома</a>
+                                </li>
+                                <li class="menu__item position-relative">
+                                    <a href="" class="menu__link color-gray d-lg-block d-none"> Еще ... </a>
+                                    <div class="submenu">
+                                        <ul class="submenu__menu">
+                                            <li class="submenu__menu-item">
+                                                <a href="" class="submenu__menu-link"> География строительства </a>
+                                            </li>
+                                            <li class="submenu__menu-item">
+                                                <a href="" class="submenu__menu-link"> Галерея </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
                             </ul>
+                            <div class="d-lg-none mt-5">
+                                <div class="header__callback-content d-flex flex-sm-wrap justify-content-sm-between flex-sm-row flex-column">
+                                    <div class="header__callback-main">
+                                        <a href="tel:+74992888743" class="header__callback-link">+7 (499) 288 87 43</a>
+                                        <div class="header__callback-hint">Контакты</div>
+                                    </div>
+                                    <div class="header__callback-socials d-flex flex-column">
+                                        <a href="" class="header__callback-social icon-telegram">Телеграм</a>
+                                        <a href="" class="header__callback-social icon-vk">Вконтакте</a>
+                                    </div>
+                                    <a href="#callback" data-fancybox class="mt-3 btn btn-sm btn-secondary"> Оставить заявку <span class="btn__icon icon-arrow"></span>
+                                    </a>
+                                </div>
+                            </div>
                         </nav>
                     </div>
                     <a href="" class="header__whatsapp d-xl-flex d-none align-items-center">
                         <span class="header__whatsapp-icon">
                             <img src="img/icons/whatsapp-color.svg" alt="icon whatsapp">
                         </span> WhatsApp </a>
-                    <div class="header__callback mt-sm-0 mt-5" data-da=".menu__body, 575.98, last">
+                    <div class="header__callback mt-sm-0 mt-5 d-sm-block d-none">
                         <span role="button" class="header__callback-btn icon-marker d-sm-flex d-none align-items-center justify-content-between"> Связаться </span>
                         <div class="header__callback-body">
                             <div class="header__callback-content d-flex flex-sm-wrap justify-content-sm-between flex-sm-row flex-column">
@@ -134,15 +204,17 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="project-card__main rounded">
+                    <div class="project-card__main rounded" style="padding-bottom: 56%;">
                         <picture>
                             <source srcset="img/project.webp" type="image/webp"><img src="img/project.jpg" class="cover-image rounded" alt="Проект">
                         </picture>
-                        <div class="project-card__actions">
-                            <a href="" class="project-card__action icon-favorite"></a>
-                            <a href="" class="project-card__action icon-compare"></a>
-                            <a href="" class="project-card__action icon-share"></a>
-                            <a href="" class="project-card__action icon-download"></a>
+                        <div class="project-card__side">
+                            <div class="project-card__actions">
+                                <a href="" class="project-card__action icon-favorite"></a>
+                                <a href="" class="project-card__action icon-compare"></a>
+                                <a href="" class="project-card__action icon-share"></a>
+                                <a href="" class="project-card__action icon-download"></a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -216,11 +288,12 @@
                     <div class="banner__body rounded" style="background-image: url('img/interior.jpg');">
                         <div class="row align-items-center">
                             <div class="col-lg-6">
-                                <h2 class="banner__title title-xl color-white"> Посмотрите <br> интерьер дома <span class="color-yellow">в&nbsp;формате 3D тура</span>
+                                <h2 class="banner__title title-xl color-white"> Посмотрите <br> интерьер дома <br class="d-lg-none">
+                                    <span class="color-yellow">в&nbsp;формате 3D тура</span>
                                 </h2>
                             </div>
                             <div class="col-lg-6 d-flex">
-                                <a href="" class="banner__btn btn btn-secondary ml-lg-auto"> Перейти а конфигуратор <span class="btn__icon icon-arrow"></span>
+                                <a href="" class="banner__btn btn btn-secondary ml-lg-auto"> Перейти в конфигуратор <span class="btn__icon icon-arrow"></span>
                                 </a>
                             </div>
                         </div>
@@ -360,21 +433,21 @@
             </section>
             <section class="examples">
                 <div class="examples__images">
-                    <div class="examples__image active">
+                    <a href="img/example.jpg" data-fancybox class="examples__image active">
                         <picture>
                             <source srcset="img/example.webp" type="image/webp"><img src="img/example.jpg" class="cover-image" alt="Гостиная">
                         </picture>
-                    </div>
-                    <div class="examples__image">
+                    </a>
+                    <a href="img/example.jpg" data-fancybox class="examples__image">
                         <picture>
                             <source srcset="img/example.webp" type="image/webp"><img src="img/example.jpg" class="cover-image" alt="Кухня">
                         </picture>
-                    </div>
-                    <div class="examples__image">
+                    </a>
+                    <a href="img/example.jpg" data-fancybox class="examples__image">
                         <picture>
                             <source srcset="img/example.webp" type="image/webp"><img src="img/example.jpg" class="cover-image" alt="спальня">
                         </picture>
-                    </div>
+                    </a>
                 </div>
                 <div class="examples__controls">
                     <div class="container">
@@ -427,13 +500,13 @@
                     </div>
                 </div>
             </section>
-            <section class="materials d-md-block d-none">
+            <section class="materials">
                 <div class="container">
                     <div class="row align-items-center">
                         <div class="col-xxl-4">
                             <div class="materials__caption title-sm"> Мы используем самые качественные материалы, а строительство выполняют профессиональные бригады и проектировщики </div>
                             <ol class="materials__list">
-                                <li class="materials__item">
+                                <li data-fancybox data-src="#floors" class="materials__item">
                                     <div class="materials__item-name">Полы</div>
                                     <div class="materials__item-image">
                                         <picture>
@@ -441,7 +514,7 @@
                                         </picture>
                                     </div>
                                 </li>
-                                <li class="materials__item">
+                                <li data-fancybox data-src="#walls" class="materials__item">
                                     <div class="materials__item-name">Наружные стены</div>
                                     <div class="materials__item-image">
                                         <picture>
@@ -449,7 +522,7 @@
                                         </picture>
                                     </div>
                                 </li>
-                                <li class="materials__item">
+                                <li data-fancybox data-src="#partitions" class="materials__item">
                                     <div class="materials__item-name">Перегородки</div>
                                     <div class="materials__item-image">
                                         <picture>
@@ -457,7 +530,7 @@
                                         </picture>
                                     </div>
                                 </li>
-                                <li class="materials__item">
+                                <li data-fancybox data-src="#overlaps" class="materials__item">
                                     <div class="materials__item-name">Перекрытия</div>
                                     <div class="materials__item-image">
                                         <picture>
@@ -465,7 +538,7 @@
                                         </picture>
                                     </div>
                                 </li>
-                                <li class="materials__item">
+                                <li data-fancybox data-src="#roofs" class="materials__item">
                                     <div class="materials__item-name">Кровля</div>
                                     <div class="materials__item-image">
                                         <picture>
@@ -475,24 +548,24 @@
                                 </li>
                             </ol>
                         </div>
-                        <div class="col-xxl-8">
+                        <div class="col-xxl-8 d-lg-block d-none">
                             <div class="materials__image">
                                 <picture>
                                     <source srcset="img/materials/visual.webp" type="image/webp"><img src="img/materials/visual.png" alt="visaul">
                                 </picture>
                                 <div class="materials__points">
-                                    <div class="materials__point">01</div>
-                                    <div class="materials__point">02</div>
-                                    <div class="materials__point">03</div>
-                                    <div class="materials__point">04</div>
-                                    <div class="materials__point">05</div>
+                                    <a href="#floors" data-fancybox class="materials__point">01</a>
+                                    <a href="#walls" data-fancybox class="materials__point">02</a>
+                                    <a href="#partitions" data-fancybox class="materials__point">03</a>
+                                    <a href="#overlaps" data-fancybox class="materials__point">04</a>
+                                    <a href="#roofs" data-fancybox class="materials__point">05</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-            <section class="completed-projects ">
+            <section class="completed-projects">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6 col-12">
@@ -635,11 +708,18 @@
                     </div>
                 </div>
             </section>
-            <section class="visual d-lg-block d-none">
+            <section class="visual">
                 <div class="visual__image">
                     <picture>
                         <source srcset="img/visual.webp" type="image/webp"><img src="img/visual.jpg" class="cover-image" alt="Фото проекта">
                     </picture>
+                    <div class="visual__body">
+                        <div class="container-xxl">
+                            <p class="visual__text">На основе примера проекта вы можете выбрать цвет для вашего будущего дома. После завершения вы сможете скачать файл с выбранной окраской и приложить его к заказу. </p>
+                            <a href="" class="visual__btn btn btn-white"> Скачать выбранную окраску fullhd <span class="btn__icon icon-download"></span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
                 <div class="visual__info-actions">
                     <div class="visual__info-action">
@@ -701,13 +781,6 @@
                             <li class="visual__info-item">Бежевые</li>
                             <li class="visual__info-item">Коричневые</li>
                         </ul>
-                    </div>
-                </div>
-                <div class="visual__body">
-                    <div class="container-xxl">
-                        <p class="visual__text">На основе примера проекта вы можете выбрать цвет для вашего будущего дома. После завершения вы сможете скачать файл с выбранной окраской и приложить его к заказу. </p>
-                        <a href="" class="visual__btn btn btn-white"> Скачать выбранную окраску fullhd <span class="btn__icon icon-download"></span>
-                        </a>
                     </div>
                 </div>
             </section>
@@ -1137,7 +1210,7 @@
                                 </div>
                                 <div class="col-xxl-6 col-lg-4 col-12 mt-lg-0 mt-5">
                                     <div class="individual__side d-flex h-100">
-                                        <a href="" class="individual__btn btn btn-secondary ml-auto mt-auto">Заполнить анкету <span class="btn__icon icon-edit"></span>
+                                        <a href="#quiz" data-fancybox class="individual__btn btn btn-secondary ml-auto mt-auto">Заполнить анкету <span class="btn__icon icon-edit"></span>
                                         </a>
                                     </div>
                                 </div>
@@ -1145,7 +1218,8 @@
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> <a href="" class="choise-btn btn btn-primary"> Выбрать этот проект от 2,7 млн <span class="btn__icon icon-arrow"></span>
+            </a>
         </main>
         <footer class="footer">
             <div class="container">
@@ -1593,6 +1667,332 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="floors" class="popup popup-md">
+        <div class="materials-desc">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h2 class="title-md"> Полы </h2>
+                    <ol class="materials-desc__list">
+                        <li> Черепной брусок 40х50 мм </li>
+                        <li> Лаги пола: доска 50х150/50х200 мм </li>
+                        <li> Черновой пол: доска 20х100 мм </li>
+                        <li> Утеплитель 100/150/200 мм </li>
+                    </ol>
+                </div>
+                <div class="col-md-6">
+                    <div class="materials-desc__image">
+                        <picture>
+                            <source srcset="img/materials-desc.webp" type="image/webp"><img src="img/materials-desc.png" alt="Изображение части">
+                        </picture>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="walls" class="popup popup-md">
+        <div class="materials-desc">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h2 class="title-md"> Наружные стены </h2>
+                    <ol class="materials-desc__list">
+                        <li> Черепной брусок 40х50 мм </li>
+                        <li> Лаги пола: доска 50х150/50х200 мм </li>
+                        <li> Черновой пол: доска 20х100 мм </li>
+                        <li> Утеплитель 100/150/200 мм </li>
+                    </ol>
+                </div>
+                <div class="col-md-6">
+                    <div class="materials-desc__image">
+                        <picture>
+                            <source srcset="img/materials-desc.webp" type="image/webp"><img src="img/materials-desc.png" alt="Изображение части">
+                        </picture>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="partitions" class="popup popup-md">
+        <div class="materials-desc">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h2 class="title-md"> Перегородки </h2>
+                    <ol class="materials-desc__list">
+                        <li> Черепной брусок 40х50 мм </li>
+                        <li> Лаги пола: доска 50х150/50х200 мм </li>
+                        <li> Черновой пол: доска 20х100 мм </li>
+                        <li> Утеплитель 100/150/200 мм </li>
+                    </ol>
+                </div>
+                <div class="col-md-6">
+                    <div class="materials-desc__image">
+                        <picture>
+                            <source srcset="img/materials-desc.webp" type="image/webp"><img src="img/materials-desc.png" alt="Изображение части">
+                        </picture>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="overlaps" class="popup popup-md">
+        <div class="materials-desc">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h2 class="title-md"> Перекрытия </h2>
+                    <ol class="materials-desc__list">
+                        <li> Черепной брусок 40х50 мм </li>
+                        <li> Лаги пола: доска 50х150/50х200 мм </li>
+                        <li> Черновой пол: доска 20х100 мм </li>
+                        <li> Утеплитель 100/150/200 мм </li>
+                    </ol>
+                </div>
+                <div class="col-md-6">
+                    <div class="materials-desc__image">
+                        <picture>
+                            <source srcset="img/materials-desc.webp" type="image/webp"><img src="img/materials-desc.png" alt="Изображение части">
+                        </picture>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="roofs" class="popup popup-md">
+        <div class="materials-desc">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h2 class="title-md"> Кровля </h2>
+                    <ol class="materials-desc__list">
+                        <li> Черепной брусок 40х50 мм </li>
+                        <li> Лаги пола: доска 50х150/50х200 мм </li>
+                        <li> Черновой пол: доска 20х100 мм </li>
+                        <li> Утеплитель 100/150/200 мм </li>
+                    </ol>
+                </div>
+                <div class="col-md-6">
+                    <div class="materials-desc__image">
+                        <picture>
+                            <source srcset="img/materials-desc.webp" type="image/webp"><img src="img/materials-desc.png" alt="Изображение части">
+                        </picture>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="quiz" class="popup">
+        <div class="quiz">
+            <h2 class="quiz__title title-xl">Укажите <br> пожелания к дому</h2>
+            <div class="quiz__main">
+                <div class="quiz__progressbar">
+                    <div class="quiz__progressbar-progress" style="--progress: 20%"></div>
+                    <div class="quiz__progressbar-info">
+                        <span class="quiz__progressbar-current">1</span> из <span class="quiz__progressbar-total">5</span>
+                    </div>
+                </div>
+                <div class="quiz__blocks">
+                    <div class="quiz__block active">
+                        <div class="quiz__block-header">
+                            <div class="quiz__block-caption title-md">Какая будет этажность?</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <label class="order__option w-100">
+                                    <input type="radio" checked name="floors-numbers" value="1" class="order__option-input hidden" hidden>
+                                    <span class="order__option-btn w-100"> 1 этаж </span>
+                                </label>
+                            </div>
+                            <div class="col-6">
+                                <label class="order__option w-100">
+                                    <input type="radio" name="floors-numbers" value="2" class="order__option-input hidden" hidden>
+                                    <span class="order__option-btn w-100"> 2 этажа </span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="quiz__block">
+                        <div class="quiz__block-header">
+                            <div class="quiz__block-caption title-md">Какова общая площадь строения?</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 col-6">
+                                <label class="order__option w-100">
+                                    <input type="radio" checked name="total-square" value="110" class="order__option-input hidden" hidden>
+                                    <span class="order__option-btn w-100"> 110 м² </span>
+                                </label>
+                            </div>
+                            <div class="col-md-4 col-6">
+                                <label class="order__option w-100">
+                                    <input type="radio" name="total-square" value="50" class="order__option-input hidden" hidden>
+                                    <span class="order__option-btn w-100"> 50-100 м² </span>
+                                </label>
+                            </div>
+                            <div class="col-md-4 col-6">
+                                <label class="order__option w-100">
+                                    <input type="radio" name="total-square" value="100" class="order__option-input hidden" hidden>
+                                    <span class="order__option-btn w-100"> 100-150 м² </span>
+                                </label>
+                            </div>
+                            <div class="col-md-4 col-6">
+                                <label class="order__option w-100">
+                                    <input type="radio" name="total-square" value="150" class="order__option-input hidden" hidden>
+                                    <span class="order__option-btn w-100"> 150-200 м² </span>
+                                </label>
+                            </div>
+                            <div class="col-md-4 col-6">
+                                <label class="order__option w-100">
+                                    <input type="radio" name="total-square" value="200" class="order__option-input hidden" hidden>
+                                    <span class="order__option-btn w-100"> более 200 м² </span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="quiz__block">
+                        <div class="quiz__block-header">
+                            <div class="quiz__block-caption title-md">Сколько нужно спальных комнат?</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 col-6">
+                                <label class="order__option w-100">
+                                    <input type="radio" checked name="sleeping-rooms" value="1" class="order__option-input hidden" hidden>
+                                    <span class="order__option-btn w-100"> 1 спальня </span>
+                                </label>
+                            </div>
+                            <div class="col-md-4 col-6">
+                                <label class="order__option w-100">
+                                    <input type="radio" name="sleeping-rooms" value="2" class="order__option-input hidden" hidden>
+                                    <span class="order__option-btn w-100"> 2 спальни </span>
+                                </label>
+                            </div>
+                            <div class="col-md-4 col-6">
+                                <label class="order__option w-100">
+                                    <input type="radio" name="sleeping-rooms" value="3" class="order__option-input hidden" hidden>
+                                    <span class="order__option-btn w-100"> 3 спальни </span>
+                                </label>
+                            </div>
+                            <div class="col-md-4 col-6">
+                                <label class="order__option w-100">
+                                    <input type="radio" name="sleeping-rooms" value=">3" class="order__option-input hidden" hidden>
+                                    <span class="order__option-btn w-100"> более 3 спален </span>
+                                </label>
+                            </div>
+                            <div class="col-md-4 col-6">
+                                <label class="order__option w-100">
+                                    <input type="radio" name="sleeping-rooms" value="none" class="order__option-input hidden" hidden>
+                                    <span class="order__option-btn w-100"> не важно </span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="quiz__block">
+                        <div class="quiz__block-header">
+                            <div class="quiz__block-caption title-md">Укажите пожелания к дому</div>
+                            <p class="quiz__block-subtitle">Можно пропустить</p>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 col-sm-6">
+                                <label class="order__option w-100">
+                                    <input type="checkbox" checked name="wishes" value="attic" class="order__option-input hidden" hidden>
+                                    <span class="order__option-btn w-100"> Мансарда </span>
+                                </label>
+                            </div>
+                            <div class="col-md-4 col-sm-6">
+                                <label class="order__option w-100">
+                                    <input type="checkbox" name="wishes" value="terrace" class="order__option-input hidden" hidden>
+                                    <span class="order__option-btn w-100"> Терраса </span>
+                                </label>
+                            </div>
+                            <div class="col-md-4 col-sm-6">
+                                <label class="order__option w-100">
+                                    <input type="checkbox" name="wishes" value="veranda" class="order__option-input hidden" hidden>
+                                    <span class="order__option-btn w-100"> Веранда </span>
+                                </label>
+                            </div>
+                            <div class="col-md-4 col-sm-6">
+                                <label class="order__option w-100">
+                                    <input type="checkbox" name="wishes" value="porch" class="order__option-input hidden" hidden>
+                                    <span class="order__option-btn w-100"> Крыльцо </span>
+                                </label>
+                            </div>
+                            <div class="col-md-4 col-sm-6">
+                                <label class="order__option w-100">
+                                    <input type="checkbox" name="wishes" value="balcony" class="order__option-input hidden" hidden>
+                                    <span class="order__option-btn w-100"> Балкон </span>
+                                </label>
+                            </div>
+                            <div class="col-md-4 col-sm-6">
+                                <label class="order__option w-100">
+                                    <input type="checkbox" name="wishes" value="second-light" class="order__option-input hidden" hidden>
+                                    <span class="order__option-btn w-100"> Второй свет </span>
+                                </label>
+                            </div>
+                            <div class="col-12">
+                                <label class="order__option w-100">
+                                    <input type="checkbox" name="wishes" value="second-light" class="order__option-input hidden" hidden>
+                                    <span class="order__option-btn w-100 flex-sm-nowrap flex-wrap"> Другое <input type="text" name="more" placeholder="Укажите любые пожелания">
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="quiz__block">
+                        <div class="quiz__block-header">
+                            <div class="quiz__block-caption title-md">Когда планируете <br> приступить к строительству?</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <label class="order__option w-100">
+                                    <input type="radio" checked name="start" value="1" class="order__option-input hidden" hidden>
+                                    <span class="order__option-btn w-100"> В течение месяца </span>
+                                </label>
+                            </div>
+                            <div class="col-sm-6">
+                                <label class="order__option w-100">
+                                    <input type="radio" name="start" value="2" class="order__option-input hidden" hidden>
+                                    <span class="order__option-btn w-100"> Через 2-3 месяца </span>
+                                </label>
+                            </div>
+                            <div class="col-sm-6">
+                                <label class="order__option w-100">
+                                    <input type="radio" name="start" value="6" class="order__option-input hidden" hidden>
+                                    <span class="order__option-btn w-100"> Через полгода </span>
+                                </label>
+                            </div>
+                            <div class="col-sm-6">
+                                <label class="order__option w-100">
+                                    <input type="radio" name="start" value="none" class="order__option-input hidden" hidden>
+                                    <span class="order__option-btn w-100"> Пока неизвесно </span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="quiz__controls d-flex">
+                    <span role="button" class="quiz__controls-prev disabled icon-arrow"></span>
+                    <span role="button" class="quiz__controls-next icon-arrow"></span>
+                    <span role="button" class="quiz__controls-submit icon-check hidden"></span>
+                </div>
+            </div>
+            <div class="quiz__form hidden">
+                <div class="quiz__caption title-md">Осталось указать данные для связи</div>
+                <div class="form__body">
+                    <div class="row">
+                        <div class="col-xl-6">
+                            <input type="text" name="name" class="form-control" placeholder="Ваше имя">
+                        </div>
+                        <div class="col-xl-6">
+                            <input type="tel" name="phone" class="form-control" placeholder="Номер телефона">
+                        </div>
+                        <div class="col-12">
+                            <textarea name="comment" class="form-control" placeholder="Комментарий к заявке"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="form__footer mt-lg-4 mt-3 d-flex flex-md-row flex-column align-items-md-center flex-lg-nowrap flex-md-wrap">
+                    <span role="button" class="btn btn-secondary"> Отправить заявку <span class="btn__icon icon-check"></span>
+                    </span>
+                    <p class="form__footer-privacy">нажимая на кнопку, вы соглашаетесь на обработку персональных данных</p>
                 </div>
             </div>
         </div>
