@@ -324,95 +324,125 @@ $(function () {
 
 
     // animation
-    gsap.registerPlugin(ScrollTrigger);
+    // gsap.registerPlugin(ScrollTrigger);
 
-    let mainTl = gsap.timeline({
-        scrollTrigger: {
-            trigger: ".promo",
-            start: "top top",
-            end: "+=65%",
-            scrub: true,
-            pin: true,
-            anticipatePin: 1,
-            onUpdate: function (self) {
-                self.animation.timeScale(self.progress);
-            },
-        }
-    });
+    // let mainTl = gsap.timeline({
+    //     scrollTrigger: {
+    //         trigger: ".promo",
+    //         start: "top top",
+    //         end: "+=65%",
+    //         scrub: true,
+    //         pin: true,
+    //         anticipatePin: 1,
+    //         onUpdate: function (self) {
+    //             self.animation.timeScale(self.progress);
+    //         },
+    //     }
+    // });
 
-    mainTl
-        .to('.promo__image', {
-            marginLeft: "-25%",
-            marginRight: "-25%",
-            stagger: 0
-        })
-        .to('.promo__main', {
-            y: "100%",
-            opacity: 0,
-            stagger: 0
-        }, 0)
-        .to('.promo__overlay', {
-            opacity: 0,
-            stagger: 0
-        }, 0);
+    // mainTl
+    //     .to('.promo__image', {
+    //         marginLeft: "-25%",
+    //         marginRight: "-25%",
+    //         stagger: 0
+    //     })
+    //     .to('.promo__main', {
+    //         y: "100%",
+    //         opacity: 0,
+    //         stagger: 0
+    //     }, 0)
+    //     .to('.promo__overlay', {
+    //         opacity: 0,
+    //         stagger: 0
+    //     }, 0);
 
-    function initGallerySlider() {
-        const slides = document.querySelectorAll('.gallery__slide');
-        const totalSlides = slides.length;
+    // function initGallerySlider() {
+    //     const slides = document.querySelectorAll('.gallery__slide');
+    //     const totalSlides = slides.length;
 
-        gsap.to(slides, {
-            xPercent: -100 * (totalSlides - 1),
-            ease: "none",
-            scrollTrigger: {
-                trigger: ".gallery__slider",
-                pin: true,
-                scrub: 1,
-                snap: 1 / (totalSlides - 1),
-                end: () => "+=" + document.querySelector(".gallery__slider").offsetWidth
-            }
+    //     gsap.to(slides, {
+    //         xPercent: -100 * (totalSlides - 1),
+    //         ease: "none",
+    //         scrollTrigger: {
+    //             trigger: ".gallery__slider",
+    //             pin: true,
+    //             scrub: 1,
+    //             snap: 1 / (totalSlides - 1),
+    //             end: () => "+=" + document.querySelector(".gallery__slider").offsetWidth
+    //         }
+    //     });
+    // }
+
+    // function initProjectCardAnimation() {
+    //     gsap.to('.project-card__main img', {
+    //         yPercent: -15,
+    //         scrollTrigger: {
+    //             trigger: '.project-card',
+    //             start: 'top top',
+    //             end: 'bottom top',
+    //             scrub: true,
+    //         }
+    //     });
+    // }
+
+    // function startAnimations() {
+    //     if (window.innerWidth > 992) {
+    //         if (document.querySelector('.promo')) {
+    //             mainTl.scrollTrigger.enable();
+    //         }
+    //         if (document.querySelector('.gallery__slider')) {
+
+    //             initGallerySlider();
+    //         }
+    //         if (document.querySelector('.project-card__main')) {
+    //             initProjectCardAnimation();
+    //         }
+    //     } else {
+    //         mainTl.scrollTrigger.disable();
+
+    //     }
+    // }
+
+
+
+    // startAnimations();
+
+    // window.addEventListener('resize', function () {
+    //     startAnimations();
+    // });
+
+
+    // map
+
+    if ($('#map').length > 0) {
+
+
+
+
+        ymaps.ready(function () {
+            var myMap = new ymaps.Map('map', {
+                center: [55.651344, 37.618423],
+                zoom: 10, //
+                controls: []
+            });
+
+
+
+            myMap.controls.remove('geolocationControl');
+            myMap.controls.remove('searchControl');
+            myMap.controls.remove('trafficControl');
+            myMap.controls.remove('typeSelector');
+            myMap.controls.remove('fullscreenControl');
+            myMap.controls.remove('zoomControl');
+            myMap.controls.remove('rulerControl');
+
+
+
         });
     }
 
 
 
-
-    function initProjectCardAnimation() {
-        gsap.to('.project-card__main img', {
-            yPercent: -15,
-            scrollTrigger: {
-                trigger: '.project-card',
-                start: 'top top',
-                end: 'bottom top',
-                scrub: true,
-            }
-        });
-    }
-
-    function startAnimations() {
-        if (window.innerWidth > 992) {
-            if (document.querySelector('.promo')) {
-                mainTl.scrollTrigger.enable();
-            }
-            if (document.querySelector('.gallery__slider')) {
-
-                initGallerySlider();
-            }
-            if (document.querySelector('.project-card__main')) {
-                initProjectCardAnimation();
-            }
-        } else {
-            mainTl.scrollTrigger.disable();
-
-        }
-    }
-
-
-
-    startAnimations();
-
-    window.addEventListener('resize', function () {
-        startAnimations();
-    });
 
 
 

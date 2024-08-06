@@ -303,6 +303,35 @@
 			font-size: 22px;
 		}
 		transition: color 0.3s ease 0s;
+		&.icon-favorite,
+		&.icon-compare {
+			position: relative;
+
+			& span {
+				width: 12px;
+				height: 12px;
+				font-size: 8px;
+				top: -6px;
+				right: -6px;
+				@media (min-width: $md4) {
+					width: 16px;
+					height: 16px;
+					font-size: 10px;
+					top: -8px;
+					right: -8px;
+				}
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				border-radius: 50%;
+				background: $accent;
+				color: $text;
+				font-weight: 600;
+				line-height: 100%;
+				position: absolute;
+				box-shadow: 0 0 0 2px #fff;
+			}
+		}
 	}
 	// .header__menu-btn
 	&__menu-btn {

@@ -144,9 +144,11 @@ textarea.form-control {
 		padding: 22px 80px 22px 40px;
 		max-width: 360px;
 	}
+	@media (min-width: $md3) {
+		max-width: 400px;
+	}
 	@media (min-width: $md1) {
 		font-size: 18px;
-		max-width: 400px;
 	}
 	@media (min-width: $md0) {
 		max-width: 455px;

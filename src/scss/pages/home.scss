@@ -1,15 +1,20 @@
 .promo {
-	padding: 30px 0;
+	@media (min-width: $md4) {
+		padding: 30px 0;
+	}
 	&__content {
 		position: relative;
 	}
 	// .promo__image
 	&__image {
-		height: calc(100vh - 60px);
+		height: 100vh;
+		@media (max-width: $md4) {
+			margin: 0 -20px !important;
+		}
 		@media (min-width: $md4) {
 			height: 940px;
+			margin: 0 -20px;
 		}
-		margin: 0 -20px;
 		position: relative;
 	}
 	// .promo__overlay
@@ -30,6 +35,12 @@
 		right: 0;
 		z-index: 2;
 		overflow: hidden;
+		top: 0;
+		padding: $header 0 0 0;
+		@media (min-width: $md4) {
+			padding: 0;
+			top: auto;
+		}
 	}
 	// .promo__main
 	&__main {
@@ -471,9 +482,7 @@
 		--bs-gutter-x: 0;
 	}
 	padding: 45px 0;
-	@media (min-width: $md3) {
-		padding: 45px 0 200px;
-	}
+
 	@media (min-width: $md2) {
 		padding: 135px 0;
 	}
@@ -485,12 +494,17 @@
 		margin-top: 30px;
 		margin-left: -20px;
 		margin-right: -20px;
+
+		overflow: hidden;
+		filter: grayscale(1) brightness(90%) invert(1);
+		height: 760px;
 		@media (min-width: $md3) {
 			margin-top: 60px;
 			margin-left: -50px;
 			margin-right: -50px;
 		}
 		@media (min-width: $md2) {
+			height: 1168px;
 			margin-top: 110px;
 		}
 		@media (min-width: $md0) {
@@ -527,21 +541,12 @@
 .completed-projects {
 	&.completed-projects_offset {
 		padding: 50px 0;
-		@media (min-width: $md3) {
+		@media (min-width: $md2) {
 			padding: 0;
-			margin-top: -220px;
+			margin-top: -750px;
 			.completed-projects__header {
 				color: #fff;
 			}
-		}
-		@media (min-width: $md1) {
-			margin-top: -350px;
-		}
-		@media (min-width: $md0) {
-			margin-top: -500px;
-		}
-		@media (min-width: $md-xxl) {
-			margin-top: -750px;
 		}
 	}
 	padding: 50px 0;
@@ -901,6 +906,13 @@
 	}
 	// .blog__title
 	&__title {
+		@media (min-width: $md3) {
+			position: sticky;
+			top: $header;
+			margin-bottom: 4.5rem;
+		}
+	}
+	&__bottom {
 	}
 	// .blog__btn
 	&__btn {
@@ -978,6 +990,11 @@
 		}
 		font-weight: 300;
 		line-height: 100%;
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		text-overflow: ellipsis;
+		-webkit-line-clamp: 5;
+		overflow: hidden;
 	}
 	// .blog__item-more
 	&__item-more {
@@ -1021,6 +1038,7 @@
 	&__media-image {
 		flex: 1 1 auto;
 		display: flex;
+		min-height: 100%;
 		& img {
 			height: auto;
 		}

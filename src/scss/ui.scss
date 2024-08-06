@@ -7,6 +7,11 @@
 .rounded {
 	border-radius: 10px !important;
 }
+.rounded-md {
+	@media (min-width: $md4) {
+		border-radius: 10px !important;
+	}
+}
 
 .title-xl {
 	font-weight: 600;
