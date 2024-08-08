@@ -6,10 +6,12 @@
 		padding: 80px 0 66px;
 	}
 	@media (min-width: $md2) {
-		position: fixed;
-		bottom: 0;
-		z-index: 2;
-		width: 100%;
+		@media (min-height: 1260px) {
+			position: fixed;
+			bottom: 0;
+			z-index: 2;
+			width: 100%;
+		}
 	}
 	// .footer__header
 	&__header {

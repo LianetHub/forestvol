@@ -92,6 +92,10 @@
 			position: fixed;
 			z-index: 3;
 			flex-direction: column;
+			@media (max-height: 1200px) {
+				top: 50%;
+				transform: translateY(-50%);
+			}
 		}
 	}
 	// .project-card__action
@@ -719,11 +723,17 @@
 	@media (min-width: $md3) {
 		margin: 0 0 100px 0;
 	}
+	z-index: 1;
 	// .visual__image
 	&__image {
 		position: relative;
 		& img {
-			min-height: 940px;
+			@media (min-width: $md3) {
+				min-height: 940px;
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
 		}
 	}
 	// .visual__body
@@ -753,13 +763,20 @@
 		&.btn {
 			max-width: 605px;
 		}
+		&:hover {
+			.btn__icon {
+				&::after {
+					transform: scale(22);
+				}
+			}
+		}
 	}
 	// .visual__info-actions
 	&__info-actions {
 	}
 	// .visual__info-action
 	&__info-action {
-		@media (min-width: $md4) {
+		@media (min-width: $md3) {
 			position: absolute;
 			z-index: 1;
 
@@ -795,7 +812,7 @@
 		padding: 40px 10px 15px;
 		display: none;
 		border: 0;
-		@media (min-width: $md4) {
+		@media (min-width: $md3) {
 			position: absolute;
 			top: calc(100% - 30px);
 			left: 0;
@@ -817,7 +834,7 @@
 	}
 	// .visual__info-btn
 	&__info-btn {
-		@media (max-width: $md4) {
+		@media (max-width: $md3) {
 			width: 100%;
 			max-width: none;
 			border-radius: 0;
@@ -831,7 +848,7 @@
 				margin-left: auto;
 			}
 		}
-		@media (max-width: $md4) {
+		@media (max-width: $md3) {
 			color: $text !important;
 			.btn__icon {
 				&::after {

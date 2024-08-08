@@ -94,10 +94,12 @@ body {
 	flex: 1 1 auto;
 	overflow-x: clip;
 	@media (min-width: $md2) {
-		margin-bottom: 1260px;
-		position: relative;
-		z-index: 3;
-		background: #fff;
+		@media (min-height: 1260px) {
+			margin-bottom: 1260px;
+			position: relative;
+			z-index: 3;
+			background: #fff;
+		}
 	}
 }
 // =======================ОСНОВНОЙ БЛОК===================

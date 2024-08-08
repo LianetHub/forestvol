@@ -128,7 +128,7 @@
 		right: 32px;
 		left: auto;
 	}
-	z-index: 3;
+	z-index: 8;
 }
 
 .more-link {
@@ -138,6 +138,7 @@
 	width: 40px;
 	height: 40px;
 	font-size: 18px;
+
 	@media (min-width: $md4) {
 		width: 60px;
 		height: 60px;
